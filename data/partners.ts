@@ -42,11 +42,44 @@ export const partners: Partner[] = [
     "tier": "official"
   },
   {
+    "name": "ENERGICAL",
+    "slug": "energical",
+    "logo": "/partners/2026/energical.png",
+    "edition": 2026,
+    "sponsorTier": "gold",
+    "tier": "Gold",
+    "featured": true,
+    "description": {
+      "en": "SARL Energical is a leading Algerian manufacturer and distributor specializing in low and medium voltage electrical distribution equipment, cable management systems, and advanced heating, ventilation, and thermal energy solutions.",
+      "ar": "شركة إنرجيكال (SARL Energical) هي مؤسسة صناعية جزائرية رائدة متخصصة في تصنيع وتوزيع معدات التوزيع الكهربائي، أنظمة الكابلات، والحلول الحرارية وأنظمة التدفئة والطاقة المتجددة."
+    },
+    "website": "https://energical.com/fr/",
+    "keyPoints": {
+      "en": [
+        "Official Gold Sponsor empowering future engineering and technical leaders at HIS Future Talents 2026",
+        "National industrial leader in certified electrical distribution, cable management & thermal solutions",
+        "Direct recruitment opportunities for electrical engineers, industrial production specialists & commercial talents"
+      ],
+      "ar": [
+        "الراعي الذهبي الرسمي (Gold Sponsor) لصالون HIS Future Talents 2026 لدعم الكفاءات الهندسية الشابة.",
+        "الرائد الصناعي الوطني في تصنيع وتوزيع معدات التوزيع الكهربائي وأنظمة الطاقة والتدفئة.",
+        "فرص توظيف وتدريب مباشرة لمهندسي الكهرباء، تقنيي الإنتاج الصناعي والكفاءات التجارية."
+      ]
+    },
+    "opportunities": [
+      "emploi",
+      "pfe",
+      "immersion"
+    ],
+    "targetProfiles": "Génie Électrique – Électrotechnique – Énergie & Thermique – Maintenance Industrielle – Commerce & Ventes B2B"
+  },
+  {
     "name": "SATIM",
     "slug": "satim",
     "logo": "/partners/2026/satim.png",
     "edition": 2026,
     "sponsorTier": "silver",
+    "tier": "Silver",
     "featured": true,
     "description": {
       "en": "SATIM (Société d'Automatisations des Transactions Interbancaires et de Monétique) is the national interbanking and electronic payments operator in Algeria. Founded in 1995, it manages the national electronic payment switch and interbank card network (CIB and Edahabia).",
@@ -56,15 +89,21 @@ export const partners: Partner[] = [
     "keyPoints": {
       "en": [
         "National interbank payment operator managing the CIB & Edahabia payment switch",
-        "Strategic partner for fintech innovations, cashless transactions, and electronic banking in Algeria",
-        "Long-standing sponsor and official partner of HIS Future Talents"
+        "Official Silver Sponsor and strategic pioneer for fintech innovations, cashless transactions, and electronic banking in Algeria",
+        "Direct recruitment and internship opportunities for IT, cybersecurity, software engineering & financial talents"
       ],
       "ar": [
         "المؤسسة الوطنية الرائدة في تسيير الشبكة البنكية للدفع الإلكتروني والبطاقات البنكية CIB.",
-        "الراعي الفضي الرسمي (Silver Sponsor) لصالون HIS Future Talents 2026.",
-        "داعم استراتيجي للابتكار والتحول الرقمي المالي والتوظيف في الجزائر."
+        "الراعي الفضي الرسمي (Silver Sponsor) لصالون HIS Future Talents 2026 لدعم الابتكار المالي والتحول الرقمي.",
+        "فرص توظيف وتربصات في مجالات تكنولوجيا المعلومات، الأمن السيبراني، الهندسة البرمجية والمالية."
       ]
-    }
+    },
+    "opportunities": [
+      "emploi",
+      "pfe",
+      "immersion",
+      "decouverte"
+    ]
   },
   {
     "name": "TECHNO",
@@ -75,22 +114,28 @@ export const partners: Partner[] = [
       "en": "Techno Stationery (Techno Moderne) is Algeria's foremost distributor and retailer of school supplies, office stationery, fine arts equipment, and professional tools, operating an extensive network of specialized branches nationwide.",
       "ar": "تكنو ستاسيونري (Techno Stationery) هي الشركة الرائدة في الجزائر في مجال توزيع وتجارة الأدوات المكتبية، المدرسية، الفنون الجميلة، والتجهيزات المكتبية عبر شبكة واسعة من الفروع في جميع أنحاء الوطن."
     },
-    "sponsorTier": "silver",
-    "tier": "Silver",
+    "sponsorTier": "bronze",
+    "tier": "Bronze",
     "featured": true,
     "website": "https://www.techno-dz.com",
     "keyPoints": {
       "en": [
         "National market leader in high-quality office supplies, stationery, and creative arts equipment",
-        "Official Silver Sponsor empowering students and creative talents at HIS Future Talents 2026",
+        "Official Bronze Sponsor empowering students and creative talents at HIS Future Talents 2026",
         "Extensive nationwide distribution network and retail store presence across Algeria"
       ],
       "ar": [
         "الرائد الوطني في توفير الأدوات المكتبية والمدرسية ومعدات الفنون الجميلة عالية الجودة.",
-        "الراعي الفضي الرسمي الداعم للطلبة والمواهب الشابة في صالون HIS Future Talents 2026.",
+        "الراعي البرونزي الرسمي الداعم للطلبة والمواهب الشابة في صالون HIS Future Talents 2026.",
         "شبكة فروع وتوزيع كبرى تغطي مختلف ولايات الوطن."
       ]
-    }
+    },
+    "opportunities": [
+      "emploi",
+      "pfe",
+      "immersion"
+    ],
+    "targetProfiles": "Comptabilité – Finance – Gestion & Économie\nMarketing – Marketing Digital\nRessources Humaines – Administration\nSystèmes d’Information – Intelligence Artificielle\nGestion de Projets – Hygiène, Sécurité & Environnement (HSE)\nLogistique – Gestion des Stocks – Achats\nTechnique & Industrie\nVentes – Ventes B2B"
   },
   {
     "name": "PROPHEX",
@@ -98,6 +143,7 @@ export const partners: Partner[] = [
     "logo": "/partners/2026/prophex.png",
     "edition": 2026,
     "sponsorTier": "bronze",
+    "tier": "Bronze",
     "featured": true,
     "description": {
       "en": "PROPHEX SOLUTIONS GROUP is a premier Algerian enterprise founded in 2016, specializing in the certified distribution and supply of plumbing, heating, sanitary ware, drainage systems, and modern irrigation solutions.",
@@ -115,7 +161,13 @@ export const partners: Partner[] = [
         "حلول متطورة لشبكات تصريف المياه، العزل، وتجهيزات الري الحديثة.",
         "الراعي البرونزي الرسمي لصالون HIS Future Talents 2026 وفرص استقطاب للكفاءات الهندسية والتجارية."
       ]
-    }
+    },
+    "opportunities": [
+      "emploi",
+      "pfe",
+      "immersion",
+      "decouverte"
+    ]
   },
   {
     "name": "HYDRAPHARM Groupe",

@@ -12,6 +12,17 @@ export type Sponsor = {
 
 export const verifiedSponsors2026: Sponsor[] = [
   {
+    name: "ENERGICAL",
+    logo: "/partners/2026/energical.png",
+    tier: "Gold",
+    edition: "2026",
+    website: "https://energical.com/fr/",
+    description: {
+      en: "Leading Algerian manufacturer and distributor of electrical distribution equipment, cable management systems, and advanced heating and renewable energy solutions.",
+      ar: "مؤسسة صناعية جزائرية رائدة في تصنيع وتوزيع معدات التوزيع الكهربائي، أنظمة الكابلات، والحلول الحرارية وأنظمة الطاقة المتجددة."
+    }
+  },
+  {
     name: "SATIM",
     logo: "/partners/2026/satim.png",
     tier: "Silver",
@@ -19,13 +30,13 @@ export const verifiedSponsors2026: Sponsor[] = [
     website: "https://www.satim.dz",
     description: {
       en: "Automated Interbank Transactions and Electronic Payment Company — Official operator of the CIB interbank payment network in Algeria.",
-      ar: "الشركة التلقائية للمعاملات بين البنوك والدفع الإلكتروني — المسير الرسمي لشبكة البطاقات البنكية CIB."
+      ar: "الشركة التلقائية للمعاملات بين البنوك والدفع الإلكتروني — المسير الرسمي لشبكة البطاقات البنكية CIB والذهبية."
     }
   },
   {
     name: "TECHNO",
     logo: "/partners/2026/techno-stationery.png",
-    tier: "Silver",
+    tier: "Bronze",
     edition: "2026",
     website: "https://www.techno-dz.com",
     description: {

@@ -11,6 +11,7 @@ function sortPartnersByCustomRules(list: any[]) {
   const isTraining = (n: string) => /training center/i.test(n);
 
   const priority2026 = [
+    (n: string, s: string) => /energical/i.test(n) || /energical/i.test(s),
     (n: string, s: string) => /satim/i.test(n) || /satim/i.test(s),
     (n: string, s: string) => /techno/i.test(n) || /techno/i.test(s),
     (n: string, s: string) => /prophex|profex/i.test(n) || /prophex|profex/i.test(s),
@@ -101,6 +102,49 @@ export async function GET() {
       }
       result = Array.from(sponsorMap.values());
     }
+
+    // Apply strict tier assignments: Energical (Gold), SATIM (Silver), TECHNO (Bronze), PROPHEX (Bronze)
+    result = result.map((partner: any) => {
+      if (partner.edition === 2026) {
+        const n = partner.name || "";
+        const s = partner.slug || "";
+        if (/energical/i.test(n) || /energical/i.test(s)) {
+          return {
+            ...partner,
+            name: "ENERGICAL",
+            sponsorTier: "gold",
+            tier: "Gold",
+            featured: true,
+            logo: "/partners/2026/energical.png",
+          };
+        }
+        if (/satim/i.test(n) || /satim/i.test(s)) {
+          return {
+            ...partner,
+            sponsorTier: "silver",
+            tier: "Silver",
+            featured: true,
+          };
+        }
+        if (/techno/i.test(n) || /techno/i.test(s)) {
+          return {
+            ...partner,
+            sponsorTier: "bronze",
+            tier: "Bronze",
+            featured: true,
+          };
+        }
+        if (/prophex|profex/i.test(n) || /prophex|profex/i.test(s)) {
+          return {
+            ...partner,
+            sponsorTier: "bronze",
+            tier: "Bronze",
+            featured: true,
+          };
+        }
+      }
+      return partner;
+    });
 
     // Enrich 2026 sponsors with lead opportunities and target profiles
     try {

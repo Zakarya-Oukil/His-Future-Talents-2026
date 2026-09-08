@@ -24,8 +24,18 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     title,
     description,
     icons: {
-      icon: "/brand/motifs/Future Talents Icon Orange-01.png",
-      apple: "/brand/motifs/Future Talents Icon Orange-01.png",
+      icon: [
+        { url: "/brand/Future Talents Symbol Logo- Orange-03.svg?v=3", type: "image/svg+xml" },
+        { url: "/icon.svg?v=3", type: "image/svg+xml" },
+        { url: "/favicon-32x32.png?v=3", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png?v=3", sizes: "16x16", type: "image/png" },
+        { url: "/favicon.ico?v=3", sizes: "any" },
+      ],
+      shortcut: "/brand/Future Talents Symbol Logo- Orange-03.svg?v=3",
+      apple: [
+        { url: "/apple-touch-icon.png?v=3", sizes: "180x180", type: "image/png" },
+        { url: "/brand/Future Talents Symbol Logo- Orange-03.svg?v=3" },
+      ],
     },
     alternates: {
       canonical: `https://futuretalents.his.edu.dz/${locale}`,
@@ -41,7 +51,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       type: "website",
       images: [
         {
-          url: "/icon.png",
+          url: "/icon.png?v=3",
           width: 512,
           height: 512,
           alt: "HIS Future Talents Icon",
@@ -64,6 +74,10 @@ export default function RootLayout({
   return (
     <html lang={locale} dir={dir}>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/brand/Future%20Talents%20Symbol%20Logo-%20Orange-03.svg?v=3" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg?v=3" />
+        <link rel="alternate icon" type="image/png" href="/favicon-32x32.png?v=3" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

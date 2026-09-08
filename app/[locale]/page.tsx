@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { eventDetails, placeholderMedias, mediaPartners, mediaPartnersDetails, MediaPartner } from "@/lib/eventData";
 import PartnerLogoGrid from "@/components/PartnerLogoGrid";
@@ -39,6 +40,7 @@ import {
   Film,
   Volume2,
   VolumeX,
+  GraduationCap,
 } from "lucide-react";
 
 /* ─── Hero Background Layer with Fallback & Reduced Motion ─────────────── */
@@ -449,22 +451,26 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Action CTAs */}
-                  <div className="flex flex-col xl:flex-row items-stretch xl:items-center gap-3 pt-2 w-full max-w-full">
+                  {/* Action CTAs: Exhibitor & Visitors/Students */}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full max-w-full">
                     <a
                       href="#contact-form"
-                      className="inline-flex items-center justify-center gap-3 min-h-[52px] px-6 py-3 rounded-2xl bg-[#F05A22] text-white font-black text-sm tracking-wide hover:bg-[#d84a15] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 focus:outline-none shrink-0"
+                      className="inline-flex items-center justify-center gap-2.5 min-h-[52px] px-6 py-3 rounded-2xl bg-[#F05A22] text-white font-black text-sm tracking-wide hover:bg-[#d84a15] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 focus:outline-none shrink-0 group"
                     >
+                      <Building2 className="w-4 h-4 shrink-0 opacity-90 group-hover:scale-110 transition-transform" />
                       <span className="whitespace-nowrap">{t("common.cta_partner")}</span>
-                      <ArrowRight className={`w-4 h-4 shrink-0 ${dir === "rtl" ? "rotate-180" : ""}`} />
+                      <ArrowRight className={`w-4 h-4 shrink-0 transition-transform ${dir === "rtl" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
                     </a>
-                    <button
-                      onClick={handleDownload}
-                      className="inline-flex items-center justify-center gap-2.5 min-h-[52px] px-4 py-3 rounded-2xl bg-white/15 border-2 border-white/30 text-white font-black text-xs sm:text-sm tracking-wide hover:bg-white/25 hover:border-white/50 transition-all duration-300 backdrop-blur-md hover:-translate-y-0.5 focus:outline-none w-full xl:w-auto xl:flex-1 min-w-0 text-center cursor-pointer"
+                    <Link
+                      href={`/${language}/students`}
+                      className="inline-flex items-center justify-center gap-2.5 min-h-[52px] px-5 py-3 rounded-2xl bg-gradient-to-r from-[#0052CC] to-[#0066FF] hover:from-[#0041A8] hover:to-[#0052CC] border-2 border-[#58B9FF]/50 hover:border-[#58B9FF] text-white font-black text-sm tracking-wide transition-all duration-300 shadow-md hover:shadow-cyan-500/25 hover:-translate-y-0.5 focus:outline-none w-full sm:w-auto sm:flex-1 min-w-0 text-center cursor-pointer group"
                     >
-                      <Download className="w-4 h-4 text-white shrink-0" />
-                      <span className="leading-tight text-center block break-words">{t("common.download_dossier")}</span>
-                    </button>
+                      <GraduationCap className="w-4 h-4 text-[#58B9FF] group-hover:scale-110 transition-transform shrink-0" />
+                      <span className="leading-tight text-center block whitespace-nowrap font-black">
+                        {language === "ar" ? "الزوار / الطلبة" : "Visitors / Students"}
+                      </span>
+                      <ArrowRight className={`w-4 h-4 shrink-0 text-[#58B9FF] transition-transform ${dir === "rtl" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
+                    </Link>
                   </div>
 
                 </div>

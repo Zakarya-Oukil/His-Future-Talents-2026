@@ -17,6 +17,7 @@ tsconfig.tsbuildinfo
 !tsconfig.json
 !components.json
 !data/*.json
+!data/**/*.json
 !messages/*.json
 !messages/**/*.json
 *.env

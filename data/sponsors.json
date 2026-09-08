@@ -64,7 +64,8 @@
       "pfe",
       "immersion",
       "decouverte"
-    ]
+    ],
+    "tier": "Silver"
   },
   {
     "name": "TECHNO",
@@ -75,8 +76,8 @@
       "en": "Techno Stationery (Techno Moderne) is Algeria's foremost distributor and retailer of school supplies, office stationery, fine arts equipment, and professional tools, operating an extensive network of specialized branches nationwide.",
       "ar": "تكنو ستاسيونري (Techno Stationery) هي الشركة الرائدة في الجزائر في مجال توزيع وتجارة الأدوات المكتبية، المدرسية، الفنون الجميلة، والتجهيزات المكتبية عبر شبكة واسعة من الفروع في جميع أنحاء الوطن."
     },
-    "sponsorTier": "silver",
-    "tier": "Silver",
+    "sponsorTier": "bronze",
+    "tier": "Bronze",
     "featured": true,
     "website": "https://www.techno-dz.com",
     "keyPoints": {
@@ -127,7 +128,8 @@
       "pfe",
       "immersion",
       "decouverte"
-    ]
+    ],
+    "tier": "Bronze"
   },
   {
     "name": "HYDRAPHARM Groupe",
@@ -158,7 +160,22 @@
       "pfe",
       "decouverte",
       "immersion"
-    ]
+    ],
+    "targetProfiles": ""
+  },
+  {
+    "name": "ENERGICAL",
+    "slug": "energical",
+    "logo": "/partners/2026/energical.png",
+    "edition": 2026,
+    "sponsorTier": "gold",
+    "website": "https://energical.com/fr/",
+    "description": {
+      "en": "SARL Energical is a specialized Algerian manufacturer and distributor of electrical distribution equipment, cable management systems, and renewable energy components.",
+      "ar": "شركة إنرجيكال (SARL Energical) هي شركة جزائرية متخصصة في تصنيع وتوزيع وتسويق معدات التدفئة والتكييف والحلول الحرارية للقطاعين السكني والمهني."
+    },
+    "tier": "Gold",
+    "featured": true
   },
   {
     "name": "Les Laboratoires Frater Razes",
@@ -189,7 +206,8 @@
     "opportunities": [
       "pfe",
       "emploi"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "Ouedkniss SARL",
@@ -204,7 +222,8 @@
       "emploi",
       "pfe",
       "immersion"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "Sarl Wafa Faile",
@@ -218,7 +237,8 @@
     "opportunities": [
       "emploi",
       "pfe"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "MAGHREB LEASING ALGERIE",
@@ -257,7 +277,7 @@
   {
     "name": "SARL AYAM",
     "slug": "sarl-ayam",
-    "logo": "/partners/2026/sarl-ayam.png",
+    "logo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAb4BwAMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABAECAwUGBwj/xABDEAABBAECBAMFBgUCBQIHAQABAAIDBBEFEgYTITFBUWEHFCJxgSMyQpGh0RVSYrHBM+EWJENy8DSSJSZTc4KT8Rf/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIEBQMG/8QALBEBAAICAgIBAwIGAwEAAAAAAAECAxEEEiExEyJBUXGBBRQjMqGxUmGRQv/aAAwDAQACEQMRAD8A9xREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARFTKCqKmVTKC5FblC5BUplW5VNwQX5TKs3BVBCC9FaCmUFyK3KrlBVFTKZQVREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARFTKCqtJQuWNzkF5crdwWNz1hdKEEjeFTeFCMwVvP9UE/mBWl481CNj1VhnQTjKB4qwzDzUESvkyGNc7HfaMq9hY2MyWXlgzgNx1KCXzh5q4ShQ3tLiw1t0jXeQ7LG6R8T9sgLT4dEGzEg81dvWsbY9Vf7wPNBsNw81UPWvE/Tur2z+qCfuVwKhtmz4rK2QIJOVVYmuCvBQXIqZVUBFQFVQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBETKArcqhKxucgvLvVWl3VYXyYWJ82PFBIdIMd1hfLgKM+f1UaSz4ZQSnzLHERLIOZlrACSfksdaKWw9jyz7EO+Ik4yr/eLpuY5W2uHbSH4aMfVBmaz3oECu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4LBpc96owxshJhAyOadrW+uVmipRNqOipWSJt4cX52gnyV5D6tfbac21JI7O15yAAgxX70zTVsQPY5j3FrwOx+Sv1BjrVr3d80zQSA0cvLT9QsFpzrWwOY1jGfdY0dAsrbFoR7OacYx26oMFdlKC82Nwkml3bcuGGtPy8VdV0u1XvGzYlLGB257t33vopfPYXCQ1mmYfiKyF0M5D7THF48B2KDA2hG22JpbWWtcHta45Kxy7rMrnOLi0uOAfAKRIznTF5GPIeQWdkPjhBGjrrOyBSmRLK2MIIzYVmYzCzBoCqGoLWhZAnRVCAAqoiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICphVRBaQFY5uVlVMIMDo8rC6LKmEKzaghGFWcj0U8sVNiCByPRWur+i2OxULPRBqnV8dQDlXQ7og5paHtd3a7xU90StMXoghTgytawMDGN7NCtbX9FPEXor2x+iCE2Dp2Vwg9FODPRV2DyQQuR6K5kOFL2jyVQxBHbEsrWeiyBquAQWtGFfhVVUFuFXCqiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAqYVUQUwmFVEFqptV6IMeOqFqvwmEFm1VDVdhAgt24VwCqiCmEwqogphVREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH//2Q==",
     "edition": 2026,
     "description": {
       "en": "SARL AYAM is officially participating in the 3rd edition of HIS Future Talents 2026.",
@@ -282,7 +302,8 @@
     "opportunities": [
       "pfe",
       "emploi"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "Gam assurance",
@@ -302,7 +323,7 @@
   {
     "name": "EURL OUM DARMAN ENTREPOT PUBLIC",
     "slug": "eurl-oum-darman-entrepot-public",
-    "logo": "/partners/2026/eurl-oum-darman-entrepot-public.png",
+    "logo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCADIAMgDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAQMEBwII/8QAQRAAAQMDAQUFAgoKAgMBAAAAAQACAwQFESEGEjFBURMUImGBcZEVFiMyVJKxwdHhBxc0QlJyk6HS8DXxU1Visv/EABoBAQACAwEAAAAAAAAAAAAAAAABAwIEBQb/xAAoEQACAgEEAgEEAgMAAAAAAAAAAQIRAwQSITETUUEFFSIyQmFxkbH/2gAMAwEAAhEDEQA/APZkREAREQBERAYXDU3ejpZOzkl8Y4gNJwvq41raGjfKcb3Bo6nkqXLL86aR+NS5z3HChujYw4fJy+i2/GCg/jd9Up8YKD+N31SvOaraigpyWx79Q4aEsGG+8/muUbYx72tG4DqJMn7FjvN5fT75pnp/xgt/8bvqlZ+MFB/G76pVAotoLfWkMDzDITgNkGM+vBSabjCWjUXTstnxgoP43fVK5a3a61UEQknfKGE43hETj2qurXNDHUQvhlaHMeMEHn+aWyFpcd82TP6x9nfpEv8ARd+C2U36QNnqmdkLawsLzgGSNzRn28vVeR3GifQV0lO7UNOWu6jkudjHyPaxjS57jgNAzn8zwWO9m79tw7dybP0SMELKj7NBNSWajgqXZligYx5zzDQCtcG0VoqazukVwhfNnAaHcfYeforTz83GLpslUWFlCQiIgCIiAIiIAiIgCIiAwiFRd6r+6UpYw4kkBDdeHmhMU5OkQl7rxU1TgHYhhzqTjJ5n2Lze9XqS5TFjHFtM04a3hveZ9v8Auqse0lS6ns8gacGUiMHnr+IBCpCpkz0mjwxjGwiIsToBWTZy9v7VtBUu3mu0iedSPL2Hh+SrayCWODmnBByCNCE6ZXkgpxpnpaLRRTd5oYZ+cjGuPlot6sOU1Toru1tKH00VWB4mHcd5g8PcftXV+jjZ/v1xN1nZ8jSnEYI0c/8AADX2kdFIV1ukulG+igAMk2AzOmDkH+3FXOipaTZuxNi3g2CljJc46Z5k+0nJ9VKVuyvU6rZg2J8v/hDbe374NtncIH4qKsFun7rOZ+73ry5j3xva9ji17SCHDQj8xxXbe7pLebrNWy5G+cMadd1o4D/eq4VkeF1OZ5MlrpdHsuzF7bfbPHUEjt2eCZo5OHH0PH1U1lePbH302S8t7R2KWowyYZ0HR3p9hK9fByMjmpOvpc3lxq+12faIiG2EREAREQBERAERYQHw97Y2FziA1oySeSplwq3V1Y+U/Nzhg6D81M7Q125GKRh8T9X45D81XVi38G9psfG5kFtawm1xuHBsoJ8tCqgvQ6+jbXUEtMdN8YB5A8v7rz+WKSGV0crS17Tgg8R1VbO7ppJxo+ERFibQRF1W2hfca5kDQd0nL3dG9fuQiTSVsutnYWWekB49m0+/ULtXywBjQ1ow1owByC6qCkdWVbIW5AJy49B/uisRxpzXMmTGztDutNY8au0Znp19Vp2nq45mC34a5pw6VpGQeg+/3Kaq6iK20Dn4Aaxu61o0z0CpUkj5ZHSPOXOOSftUylSo8/qsrk/8nH8HUX0SH6gWDbaE8aWL0bhdSKq2c7ZH0R8tht8nCJ0Z6scfvV12Xqi63No5JTJJTjdDjxLeXqOHuVaXRQ1T6OqZM3kcEdQsoyaZZhrHLhF7WVqilZNE2RhyxwyCOa2K46K5MoiISEREAREQGFw3W4wWm2zV05xHC0uI6nkB5k4Hqu5eW/pJv5q61tnhceypyHS4/eeRoPYAfefJQ3Ss2NNhebIoo1WW+y3eepNW7M5eZBrwaeQ8hwUwvOKWqkoqllRCcPYcjoevv4K+0FfDcaYTwnyczm0qtOzt5sOzro6lFXexxXNvatIjnAwH4yHeR/38FKopKYycXaKBVWe4UZIlpnlo4PYN5p935LlEMpdgRvJ4YDSSvSUWNGytU0uUUai2fuFY4ZhMEedXyDGPTirZbbZT2yDs4RlztXvPF35D/ddV2opSoqnmlPh9BWmxUXdaXtnjEkup8hyH3qEs9D3ysG8Mxx+J3Q9Apq93VluhZCHYnny2MDiMDU+mnvCzXHJydXmUVRE36v71Vdgw/JwnGnN35cFEoipbvk4UpOTtnBWXqmopzBKyUuABJaAfZzWqPaGhe7B7Rnm5uce5RF//AOVf/K37FHKxRTVnPnnkpNIvENTDUs3oJWPA44OSFsVGhmkp5BJC8teDoRp/oVstVxbX028QBIw4e0f29CsXGi7FnUuH2W3Zuv1NFIf/AKjz/cff71Y159FI+KRsjDhzTkFXegq21tKyZvMajPA9FnCV8HUwztUzrREWZsBERAEREB8rzHa/Yi6VF7mrrbEKmKoO8WhwDmO58TqDx+7mvT1A3za21WGUQ1Uj3zEZ7KIbzgPPom3dwWYtS9NLemeYfEfaX/1b/wCoz8V00Oy21luqBNT214PNpkYQ4eeqvjNvLZIwPFPV4cARlrf8l9fHm2/R6v6rf8lHiZsS+tWqdEbS2y6zQh09vkgk5sL2nXyIPD3Ld8DXH6KfrN/FD+k6yscWupq0EHGDG3/JY/WfZPo1d/Tb/ksvE/Rrv6nF/KPr4GuP0Y/WH4p8DXD6K76w/FfP60LJ9Hrv6bf8k/WhZPo9d/Tb/knifoj7jH2h8DXD6K76w/FZFmuBIHdiPMuH4rH60LJ9Grf6bf8AJfUX6TbHI8NdFVxgnBc6IYHuJKeN+h9yj7RYaCljtlDh7mjAL5HHh5+i83nvTr5td3nJ7FocyFp0w0A6+08V6RUtivNlmZTzNMdVC5rJGnIw4YyvJbVTS0l/NNM0tkiL2uB5EA/2WMuFRzNbkk5R9NlnREWuVlUv/wDyr/5W/Yo5SN//AOVf/K37FHK+PRy8v7sKSsEpjubWcpGlp6cM/co1SFjYX3WEjgwOJ8tCj6Ixfsi2KWsNf3Wq7B5+TmOPIO/PgoldNBSuq6yOJuRk5JHIKmL5OxBtSVF7RYWVsHRCIiAIiID5Xiu2kFRT7V1veN7Mj99jjzYRpjyHD0XtaqG3+z/wpaO+wMzU0eXDH7zOY+/0PVWY5U+TV1eNzx8fBSKb9lh/kH2LctNN+yw/yD7FuWycIjLnR5b3hg1A8Y6/9KKVn/6PmoOvo+7S7zR8m45Hl1WSfsHIiIpARF10FH3mXecPk2nJ8+iAvv6N7pJHAbZUu8DiX0+eXUff71IbT2HF3gvMDeRZOAPLR33e5VGGV9PMySN26+MhzSNMYXplurYb1aWyloxI3dkb0PMLUyx+UdPTyWWHjl2uinIuitpX0VU+B37p0PULnWlymGmnTKpf/wDlX/yt+xRysNzstTW1zp43RhpAA3nEH7Fzx7NVJPjniaOeMlWKSo508c3JtIhlZbBbn00TqiYYkkGGg6EN/ErdRWOlpXB7szSA5BfwHsH/AGpFYylfCL8OFxdyCtdgoO7UvbvGJZhnXkP91UHZ6A11aA4Zjj8T+h6D1V0GgUwj8nUww/kzKIitNoIiIAiIgCxxCyiA8y2itPwTcXMY3FPL44sDAA5j0+zCi16VtDahdbY+JoHbM8cROni6ew8F5oQQSCCCDgg6EfmtnG7RwtVh8c7XTMrXNEyoiMTxo4eo/MLYisNUrU0L6eYxP4g6efT3r4U5X0feYctHyjRkeag8HOMa5xjmskD7hhfUTCJnEnXy6+gVghiZTxiNg0aPU9fUrRQUfdocuHyjhk+S7FDdgKe2Tu/cLh3aR2IakhuvJ3I+vBQKLGStUWYpuElJHo+0FB29L3hg+UiGTjm3/dfeqqrPs3dfhW2ASHM8OGSZ59D6/ioe70Pca0taPk3+JnTzHoufkjTOtNKUVNdM4ERFWUBZAJcABkk4AAySvh8jIxvPe1o5knCldmIYa+odVscHxwHAI1Bf+Wh9ymMbZMVukkWG00IoKNrDjtHeJ58/y4LvRFd0dJJJUjKIikkIiIAiIgCIiAwRoqDthaO51wrYm/JVB8WP3X/nx9Cr8uO5UMdxoJaWThIMA4+aeR9DgrKLp2UZ8SyQaPKSQNSca4/BfS1XiCSkiqKeUFskR3XD1+/itFBWd5h3XH5RowfPottcq0cBpxdM7Fzdyi753jnjO7yz1XSiEBEXHX1XdocNPyjhgeXVAdQIOoOdcfivpc1B+wx+w5966VIO+yXX4HuDalxPYkYmH/z19o4/9q7bR2194sr20krmztHaQvY7G8emehGnuK80qf2Wb+Q/Yrf+jnaDv1vNqqH5mpR8mT+9Hy93D2EKjJC1aN/SZE08cumefmvrmOLXVU4IOCC9wx19Vg11W/jVTkecjiFZtv7F3C5C4wtxBVHx44Nk/Pj6FVJa9I0csZY5uLZvpaaouVbDSxAvlmeGtyc/6BxXtNotsNotkNDD82JuCcfOPM+pyVUf0d2Ls43XidviflkAI4Dm714eh6q+qaOtosO2O59syiIh0AiIgCIiAIiIAiIgCIiAo36Q7Rv299zgb4gA2UAcRnQ+nD3dF5lDM+nmEreIOo5Hqvf54Y6mB8EzA9kjS1zTwIOi8ju2wd4oq2RlHSvq6ck9m9hGccgRyIWxjmqpnK1eB3uij5ilZNE2Rh0cM+Y/MLYvi3bN7Q08pa+1z9m866DTopT4vXb6BL7lZuXs0fFk9MipZWwxGV5wGjPmenqVXppn1ExldxJ0HIdFY7jsztFUy7rLXN2bTpwGevNcnxM2i/8AVS+9v4qVKPseKfp/6Pug/YYvZ966l10WzN6ipGMfbpQ4DBBIPP2rf8W7x9Bl94Ubo+x4snpkPU/ss38h+xRNquc9nucFdCfFE7JbnG8OYPtCtc2zN6fTyNbQSFzmEAbzRnT2qMotgNoKqpbHNSCmjJ8Ukj2kN66A5J/3PNN0apszhiyqSaTPTqylpdpbB2efkaqIPjcRq3OoPtVCpf0eXZ1wEVSYmUwd4pmvzkeQ45PmvSqGkjoKGCkjzuQRtjaTzAGF0rUdHXnp4ZWnLtGqngjpoI4ImhkcbQ1rRwAC2oig2Eq4RlERCQiIgCIiAIiIAiLhkr3RVZg7lVPAcxvaNYCw72dc54DGvTI4oDuRappWU8L5pHBscbS57jyA1K0UlwpK50gpZ2yGPdL93kHNDm+9pB9UB2LCyiAwij73c22azVdyfGZG0sTpCwHBdjllR1dtXFQuue9Svd8HUTKp2H4397e8I6Y3ePnwQh0ixItMcodTtldhoLQ45PDTK1UtfR12e61UVRusbIezeHYa7JadORwSPYhJ1oouxXZt8s8NxbEYhKXDcJyQWuLePtblSiAwsooe5X9lt2ddeH0swADMQSDceC5waAemrggJhFGUV2bWXi425sRa6gMYc8nRxe3eGB5DCk0ARFD0F9bcLZJcIKOZ7W1D4BGzBed2TcJ1OMaZ48PPRAS+UyuH4QijoXVlYHUMTC4O7wQ0tw7dycEjB0I9oUZc9q4rabyHUrn/AATTRzu8WO0L97DRppjdGuvHghFosSL5ad5gPUZX0hIREQBERAYXne0tRtV8aS6lpLpJQ01RA6JlKWtjmjGHSB3MknI5DTmvRFXLptnQWm7fBs9HcXzu+Z2VI54l0BO6f3sA644IiGRk+1W0LrlSvi2VubaNjX9tGQzee443ca6Aa9OIWl21W1YrqiSPZauMD3RCGN7W+Boz2hODqTnTloFIW7aSyO2hNG2ouLZxUTU7XVBeYXy72XMBPhyN3AGmBoOKsHwnSfCwtfbDvZh7fs+e5ndz71Jj38lFpr/tdLI8XOwXN8ElNJG5tO1jHB7nkhwOcjDCB7RnzXZY63aWn2SukEltq2VVG1woJKohz5Qc7oIzqW6DPPRTtftBZZLJdJ55e2pqQvp6yNgy5uu64Y46rRUbQWeevds86kqalrg2CYsp3PhZvN0Y93Iluv3oOvko1Lc79XbO32zOtl3uM00hjE0zmuMPgblp101ycDr1UtLS3e80u0tQbLV0jqm2w08EUwG9I5u/nGPaFL7N37ZakkFotNLNQxyzPbG58DmxyyN0cA85yfDzPJdLNvrHJUtY01Qpny9kyudTuFM5/DAk4cdM8PPGqEJL5Z23esuNss8Etvtz66Zr42yQt+dufvkeePtUZRXi8V18oIItnqu2UQL+9SzNYMtDDuAYPDex/wBZXX8dbQLy61v7wyVs4p+1dCeyMp4N3+GStdNtzbaq4vou63GKSIF0rpqRzWxNwTvOPIEA4PNDK17IGz3a/wBj2bNri2WuElVD23ZS4aWFznuc08c48QXVsnLtGxl6qrvTXOT5GI08U5aHvcGu3wwNwBlxHTlxVgse0tHfy/utPWRhrQ9rp6dzGyMOcOaToQcINpaI391lZFVPmYQ2SVkJdExxbvBrnDgSNennnRCEuuSn2+v2lt1y3vgzaSsonwOY+OrfE54fkYc0jGNMj1UdUXasi2cuez1yhq6d4khmoBWvBmfE6dvg57xaQdddOQwvTa+6U1tlpGVBdvVlQKeLdbnLyCRnoNCoy/3my26upWVlG+urxmSnhp6Xt5mDm8fwjlnRLDX9n3aKKpg2p2gqZYXNhqX05heeD92LBx7Doq3tRcL5FtrboWvq4Lb3yljYYnBsUm8/Lw/meQA4aFWT45WT4FF27y4wGXsRGI3dqZf/AB7nHe8vXhqoqa47LVfb7T1tqqIqu17naGppnMljyfD4ToePnjyRB1VJlnkuFPFcYaB78TzRvlYDzDS0H/8AY/uvOKK53WbZapttttV1IfWTOjrqTG64dsXHGHNODqDgj2qzXmv2cvl0FkuFsnr3QS7hlZTOdHFIW53d8cCR6dV80G2tjp4ZaOmt9fSxW+FzpGGicxsLWtLsHpkDTPFA+X2Q1ovG1Np2fnozs3cqqtMkjopZzvM1PhzlxdgDlk8OK5LvLfrkb+WbLXFhu1LDDHvBvgLN7OdeB3v7K4122lroZIomsrKueSETmKlp3SujjOoc7HALMm2dsZWQUsUdbUOljjkc6Cle8Qtf8wv0y3PTCCl1ZPxghjQeIGq+0RQZhERAEREAVeu1vq6ja6wVsMJfT0gqRM/I8O8wBvnqQeGVYFFS3ynilnjMcpkpyBI0AeElwa3if3t7IPQHOERDaKdS7MXen2gbcpqaeopW3momNH2zd1ocTuTgZwSMnTj5ZWs2Law387Vdxp+8Cr3hT9v8v3f5nZ4+Zq3xfO4+eiukN/pZnxxiOQPeQA0447zh11wWHUaajUo2+wOtbq8QzBrXtY6MgB4JIAzrp84FTyV/j7KPX7BXKuor9U0rn0lfVV05awvBZVwEgta7oc5IOmOenCSuNuvI2qiqbVZ6iimM8fbVrKtpgqIRgO7SPqBkDTPPKtIvVN3SaokbJCII2yPa8AOGW5xjrrj2rQ3aWic+la1sp70GbhABALnbu6SDxBB9x1U8j8V8lbsmwk89ATd6qrY5s9Q+Gk3mmKIvLgH6ak4dnU81pfQbS1OyzNj32KOMCNlO+4ds0w9m0jxhvzi4gZxprr5K2N2ggex8gp5y1tMKgu3RjdOoHHij9oIWx1Egp53CCbscaAyO3i3w5Ouo8k5Fx9lPk2Vu8V7luJgnqaWO7ic0XbNAnjDGhso1xvNcM4OM45KxQ2+sh2nv9aaNs0FTSwMha9zQ2ZzWv3mnjgagajGqitsqt8+0VvtlVcH0Ftljc6SZj93LtdCeGmG8eGVyWWtnZRbSUFPXy1tDS073QTudktO6eB/3hkLG+aNtab8FK/7JDY6hu1Hd6hpt9TbLR2ADaSoqRMGTbwz2ZBJDcZ9Soitt22dHtNcKu1wTF9ZUZklEkQikgbjswM6teAC3UHOeXFRcu21zk2XbbMSCcDD6nJBMXAa9SdM/ecqY2mk7S92ennuc1DTPo96SVkhbggEj2kkAfmo3WZvRtNKT9lg2rguVXT2WsobZJUy0tcyokpxI1rgAx2mScZyQFxZv1JfDtFHs/JOK2mEM1H27O1pyxx3SDnBa4HOAs7IbQ1DrDCbiZZ9+pMEc55t8OHOJ14uIz5dVOSbRQwzvilgla9mAW7zSQ7w5B10HjGp0464wTkraNXIlCTi30VVuzd+ZMNpO5Qmv+ETVm2dsMdmWbmN/hvga54eq57jZNp7zQ3uYw18cNVCGwUFVVMeTIZWuLmgeFrQ1uACSfsV0+HoA97TG4CMsDzvs0Lt3z1A3xrw0K537UQAPcKSocxgad8NBB3i0D37wPopplbcfZCV1BefjiyptdomoXuqmGoq2VTTBUwD5xez+PGQMDPnzW+tslyldtoWUrj8JQsbSeJo7UiDd66eLTXCnZ77DTyxMfDIe1Y14wRkb2QBjOTw5Zxx4LXNtJSxULqwRySRtkDPDg/ub/XkNPaFFMXFfJX6KkvuzFdPU01mdc4q+CDeEczWSQyMjDN054t0zkcFq2gor9VXKGrttino7qY4sV0Fa3s+rmStPzmt1HA55dFZDtJAwSPdTzBkc/ZOcQABxyfYN0/kvo39rJ44nUkwMj5GjUH5hAPDqXf2U0xca7JkeaytMMonp45gC0PaHAHiM6rcsS0IiIAiIgC1GJjt7LGnfGHZHEfgiIDHYxBzCI25YMMO780eXRGQxMZ2bY2tbnO6G4Gc5+3VEQUjBgiMvaGNhfw3sDPX7gVnsY+O43Oc5x6/bqiIRSM9jHukBjQCMEY0I/BazR0zt7ep4jvnLssByep80RBSNFfarfcYOxq6SKVmd4BzeB6+R80prRQUlE+hp6WOOneCHxtbgOB0OeuiInySpPo1HZ60Gl7qbfCYQA3c3OQO9j2ZJPqs1lgtVe6N1XQwzGJu6zfbndHRESid8vZ2RUtPDEyGOGNkcXzGtaAG+wclsMbCSS1uSMHTiERCHyzHYx/8Ajb83d4cunsQxMLC0saWniCOKIhFDs4w4O3G5aMA44BBEwANDG7oPADmiIKMd3h1IjZknPzRx5H2rJiidguY04ORkcERSTSPsAAADgOAC+kRQAiIgP//Z",
     "edition": 2026,
     "description": {
       "en": "EURL OUM DARMAN ENTREPOT PUBLIC is officially participating in the 3rd edition of HIS Future Talents 2026.",
@@ -312,7 +333,8 @@
       "pfe",
       "decouverte",
       "immersion"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "BortoCall",
@@ -340,7 +362,8 @@
     "opportunities": [
       "emploi",
       "pfe"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "SARL SOFICLEF",
@@ -373,7 +396,8 @@
       "immersion",
       "pfe",
       "decouverte"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "Laboratoires Merinal",
@@ -388,7 +412,8 @@
       "emploi",
       "pfe",
       "decouverte"
-    ]
+    ],
+    "targetProfiles": ""
   },
   {
     "name": "KAOUA FOOD",
@@ -419,6 +444,71 @@
       "immersion"
     ],
     "targetProfiles": "gestionnaire des ressources humaines \ncommercial sédentaire (plusieurs postes )"
+  },
+  {
+    "name": "BOMARE COMPANY - STREAM",
+    "slug": "bomare-company-stream",
+    "logo": "/partners/2026/bomare-company.png",
+    "edition": 2026,
+    "opportunities": [
+      "emploi",
+      "pfe",
+      "immersion",
+      "decouverte"
+    ],
+    "targetProfiles": "Ingénierie électronique, informatique, commerce & marketing",
+    "website": "https://www.bomarecompany.com",
+    "description": {
+      "en": "BOMARE COMPANY (STREAM System) is a premier Algerian manufacturer and technological pioneer in consumer electronics, smart TVs, digital displays, and innovative industrial engineering.",
+      "ar": "شركة بومار كومباني (BOMARE COMPANY - STREAM) الرائدة في الجزائر في تصنيع وتطوير الأجهزة الإلكترونية والشاشات الذكية وحلول التكنولوجيا المتقدمة."
+    }
+  },
+  {
+    "name": "Okadoo",
+    "slug": "okadoo",
+    "logo": "/partners/2026/okadoo.png",
+    "edition": 2026,
+    "opportunities": [
+      "emploi",
+      "pfe"
+    ],
+    "targetProfiles": "E-commerce, supply chain, marketing digital, développement web & mobile",
+    "website": "https://www.okadoo.com",
+    "description": {
+      "en": "Okadoo is a fast-growing Algerian e-commerce and digital logistics ecosystem providing on-demand retail, marketplace, and express delivery solutions.",
+      "ar": "أوكادو (Okadoo) منصة رقمية وتجارة إلكترونية ولوجستية جزائرية تقدم خدمات التوصيل السريع والتسوق والحلول الرقمية للمستهلكين والشركات."
+    }
+  },
+  {
+    "name": "Beker Laboratoires",
+    "slug": "beker-laboratoires",
+    "logo": "/partners/2026/beker-laboratoires.png",
+    "edition": 2026,
+    "opportunities": [
+      "emploi"
+    ],
+    "targetProfiles": "Biologie, chimie pharmaceutique, contrôle qualité, délégués médicaux",
+    "website": "https://bekerlaboratoires.com",
+    "description": {
+      "en": "Beker Laboratoires is an Algerian pharmaceutical laboratory specializing in high-standard generic drug manufacturing, biotechnology, and healthcare innovation.",
+      "ar": "مخابر بيكر (Beker Laboratoires) مؤسسة صيدلانية جزائرية متخصصة في تطوير وتصنيع الأدوية الجنيسة والتكنولوجيا الحيوية الصيدلانية."
+    }
+  },
+  {
+    "name": "Halkorb RH",
+    "slug": "halkorb-rh",
+    "logo": "/partners/2026/halkorb-rh.png",
+    "edition": 2026,
+    "opportunities": [
+      "emploi",
+      "immersion"
+    ],
+    "targetProfiles": "Gestion des ressources humaines, psychologie du travail, management, recrutement",
+    "website": "https://www.halkorb-rh.com",
+    "description": {
+      "en": "Halkorb RH is a specialized human resources consultancy and talent acquisition firm assisting businesses across Algeria in recruitment and HR development.",
+      "ar": "هالكورب للموارد البشرية (Halkorb RH) مؤسسة استشارية رائدة في استقطاب الكفاءات والتوظيف وإدارة رأس المال البشري للمؤسسات والشركات."
+    }
   },
   {
     "name": "HIS University",
@@ -2245,70 +2335,5 @@
       "pfe",
       "immersion"
     ]
-  },
-  {
-    "name": "BOMARE COMPANY - STREAM",
-    "slug": "bomare-company-stream",
-    "logo": "/partners/2026/bomare-company.png",
-    "edition": 2026,
-    "opportunities": [
-      "emploi",
-      "pfe",
-      "immersion",
-      "decouverte"
-    ],
-    "targetProfiles": "Ingénierie électronique, informatique, commerce & marketing",
-    "website": "https://www.bomarecompany.com",
-    "description": {
-      "en": "BOMARE COMPANY (STREAM System) is a premier Algerian manufacturer and technological pioneer in consumer electronics, smart TVs, digital displays, and innovative industrial engineering.",
-      "ar": "شركة بومار كومباني (BOMARE COMPANY - STREAM) الرائدة في الجزائر في تصنيع وتطوير الأجهزة الإلكترونية والشاشات الذكية وحلول التكنولوجيا المتقدمة."
-    }
-  },
-  {
-    "name": "Okadoo",
-    "slug": "okadoo",
-    "logo": "/partners/2026/okadoo.png",
-    "edition": 2026,
-    "opportunities": [
-      "emploi",
-      "pfe"
-    ],
-    "targetProfiles": "E-commerce, supply chain, marketing digital, développement web & mobile",
-    "website": "https://www.okadoo.com",
-    "description": {
-      "en": "Okadoo is a fast-growing Algerian e-commerce and digital logistics ecosystem providing on-demand retail, marketplace, and express delivery solutions.",
-      "ar": "أوكادو (Okadoo) منصة رقمية وتجارة إلكترونية ولوجستية جزائرية تقدم خدمات التوصيل السريع والتسوق والحلول الرقمية للمستهلكين والشركات."
-    }
-  },
-  {
-    "name": "Beker Laboratoires",
-    "slug": "beker-laboratoires",
-    "logo": "/partners/2026/beker-laboratoires.png",
-    "edition": 2026,
-    "opportunities": [
-      "emploi"
-    ],
-    "targetProfiles": "Biologie, chimie pharmaceutique, contrôle qualité, délégués médicaux",
-    "website": "https://bekerlaboratoires.com",
-    "description": {
-      "en": "Beker Laboratoires is an Algerian pharmaceutical laboratory specializing in high-standard generic drug manufacturing, biotechnology, and healthcare innovation.",
-      "ar": "مخابر بيكر (Beker Laboratoires) مؤسسة صيدلانية جزائرية متخصصة في تطوير وتصنيع الأدوية الجنيسة والتكنولوجيا الحيوية الصيدلانية."
-    }
-  },
-  {
-    "name": "Halkorb RH",
-    "slug": "halkorb-rh",
-    "logo": "/partners/2026/halkorb-rh.png",
-    "edition": 2026,
-    "opportunities": [
-      "emploi",
-      "immersion"
-    ],
-    "targetProfiles": "Gestion des ressources humaines, psychologie du travail, management, recrutement",
-    "website": "https://www.halkorb-rh.com",
-    "description": {
-      "en": "Halkorb RH is a specialized human resources consultancy and talent acquisition firm assisting businesses across Algeria in recruitment and HR development.",
-      "ar": "هالكورب للموارد البشرية (Halkorb RH) مؤسسة استشارية رائدة في استقطاب الكفاءات والتوظيف وإدارة رأس المال البشري للمؤسسات والشركات."
-    }
   }
 ]

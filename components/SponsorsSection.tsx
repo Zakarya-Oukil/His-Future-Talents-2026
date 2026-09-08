@@ -18,6 +18,9 @@ import {
   GraduationCap,
   Layers,
   Search,
+  Crown,
+  Medal,
+  Star,
 } from "lucide-react";
 
 export type SponsorItem = {
@@ -64,8 +67,30 @@ interface SponsorTheme {
 }
 
 const SPONSOR_THEMES: Record<string, SponsorTheme> = {
+  energical: {
+    // ENERGICAL: Prestigious Radiant Gold & Deep Obsidian
+    primaryColor: "#D4AF37",
+    cardBackground: "linear-gradient(180deg, #2D2305 0%, #1A1402 60%, #0E0B01 100%)",
+    borderColor: "rgba(212, 175, 55, 0.55)",
+    hoverBorderColor: "#F5D77F",
+    glowShadow: "0 16px 45px rgba(212, 175, 55, 0.32)",
+    radialGlow: "rgba(212, 175, 55, 0.4)",
+    badgeBg: "rgba(212, 175, 55, 0.2)",
+    badgeBorder: "rgba(212, 175, 55, 0.45)",
+    badgeText: "#F5D77F",
+    taglineColor: "#F5D77F",
+    buttonBg: "rgba(212, 175, 55, 0.2)",
+    buttonBorder: "rgba(212, 175, 55, 0.45)",
+    buttonText: "#FFFFFF",
+    sectorEn: "Electrical Equipment & Thermal Solutions",
+    sectorAr: "المعدات الكهربائية والحلول الحرارية",
+    taglineEn: "Official Gold Sponsor — Algeria's Leader in Energy & Thermal Systems",
+    taglineAr: "الراعي الذهبي الرسمي — الرائد الوطني في التجهيزات الكهربائية والطاقة",
+    shortDescEn: "Algerian industry leader in the manufacturing and distribution of electrical distribution equipment, cable management systems, heating and renewable thermal solutions.",
+    shortDescAr: "مؤسسة صناعية جزائرية رائدة متخصصة في تصنيع وتوزيع معدات التوزيع الكهربائي، أنظمة الكابلات، والحلول الحرارية وأنظمة التدفئة والطاقة المتجددة.",
+  },
   satim: {
-    // SATIM: Iconic Crimson Red & Pure White
+    // SATIM: Iconic Crimson Red, Silver & Pure White
     primaryColor: "#EE2737",
     cardBackground: "linear-gradient(180deg, #2D050D 0%, #1A0307 60%, #0E0104 100%)",
     borderColor: "rgba(238, 39, 55, 0.45)",
@@ -81,35 +106,35 @@ const SPONSOR_THEMES: Record<string, SponsorTheme> = {
     buttonText: "#FFFFFF",
     sectorEn: "Fintech & Electronic Banking",
     sectorAr: "الدفع الإلكتروني والمنظومة البنكية",
-    taglineEn: "National CIB & Edahabia payment switch operator",
-    taglineAr: "المشغل الوطني للبنية التحتية للدفع الإلكتروني",
+    taglineEn: "Official Silver Sponsor — National CIB & Edahabia payment switch operator",
+    taglineAr: "الراعي الفضي الرسمي — المشغل الوطني للبنية التحتية للدفع الإلكتروني",
     shortDescEn: "National interbank and electronic payment switch operator managing CIB and Edahabia transactions across Algeria.",
     shortDescAr: "المشغل الوطني المرجعي للشبكة البنكية ولمنظومة الدفع الإلكتروني وبطاقات CIB والذهبية في الجزائر.",
   },
   techno: {
-    // TECHNO: Signature Golden Yellow, Bold Red & Charcoal
-    primaryColor: "#FFD500",
+    // TECHNO: Warm Bronze, Signature Yellow & Bold Red
+    primaryColor: "#CD7F32",
     cardBackground: "linear-gradient(180deg, #2A1A02 0%, #1A1001 60%, #0D0801 100%)",
-    borderColor: "rgba(255, 213, 0, 0.45)",
+    borderColor: "rgba(205, 127, 50, 0.5)",
     hoverBorderColor: "#FFD500",
-    glowShadow: "0 16px 45px rgba(255, 213, 0, 0.24)",
-    radialGlow: "rgba(255, 213, 0, 0.32)",
-    badgeBg: "rgba(255, 213, 0, 0.16)",
-    badgeBorder: "rgba(255, 213, 0, 0.35)",
-    badgeText: "#FFD500",
+    glowShadow: "0 16px 45px rgba(205, 127, 50, 0.26)",
+    radialGlow: "rgba(205, 127, 50, 0.32)",
+    badgeBg: "rgba(205, 127, 50, 0.18)",
+    badgeBorder: "rgba(205, 127, 50, 0.4)",
+    badgeText: "#F5C28F",
     taglineColor: "#FFD500",
-    buttonBg: "rgba(255, 213, 0, 0.16)",
-    buttonBorder: "rgba(255, 213, 0, 0.4)",
-    buttonText: "#FFD500",
+    buttonBg: "rgba(205, 127, 50, 0.18)",
+    buttonBorder: "rgba(205, 127, 50, 0.4)",
+    buttonText: "#FFFFFF",
     sectorEn: "Office Supplies & Creative Arts",
     sectorAr: "الأدوات المدرسية والمكتبية والفنون",
-    taglineEn: "Algeria's foremost distributor of stationery & creative tools",
-    taglineAr: "الرائد الوطني في توفير الأدوات المدرسية والمكتبية",
+    taglineEn: "Official Bronze Sponsor — Foremost distributor of stationery & creative tools",
+    taglineAr: "الراعي البرونزي الرسمي — الرائد في توفير الأدوات المدرسية والمكتبية",
     shortDescEn: "Algeria's foremost distributor and retailer of school supplies, office stationery, and fine arts equipment nationwide.",
     shortDescAr: "الرائد الوطني في الجزائر في توزيع وتجارة الأدوات المكتبية، المدرسية، الفنون الجميلة والتجهيزات الاحترافية.",
   },
   prophex: {
-    // PROPHEX: Deep Royal Blue & Bright Crimson
+    // PROPHEX: Deep Royal Blue & Warm Bronze Accents
     primaryColor: "#0052CC",
     cardBackground: "linear-gradient(180deg, #071D44 0%, #04122D 60%, #020817 100%)",
     borderColor: "rgba(0, 82, 204, 0.55)",
@@ -125,8 +150,8 @@ const SPONSOR_THEMES: Record<string, SponsorTheme> = {
     buttonText: "#FFFFFF",
     sectorEn: "Plumbing, Heating & Irrigation Solutions",
     sectorAr: "السباكة والتدفئة وحلول الري والصرف",
-    taglineEn: "Leading distributor of plumbing, heating & irrigation systems",
-    taglineAr: "الرائد في توزيع تجهيزات السباكة والتدفئة وأنظمة الري",
+    taglineEn: "Official Bronze Sponsor — Distributor of plumbing, heating & irrigation systems",
+    taglineAr: "الراعي البرونزي الرسمي — الرائد في تجهيزات السباكة والتدفئة وأنظمة الري",
     shortDescEn: "Algerian leader in the distribution and supply of high-grade plumbing, heating, sanitary ware, and modern irrigation solutions.",
     shortDescAr: "مؤسسة جزائرية رائدة في التوزيع المعتمد لتجهيزات السباكة والترصيص، التدفئة المركزية، الأدوات الصحية وشبكات الري.",
   },
@@ -180,8 +205,10 @@ export default function SponsorsSection() {
   const officialSponsors = useMemo(() => {
     const s2026 = sponsorsList.filter((s) => Number(s.edition) === 2026);
     
-    // Identified official sponsors (either with sponsorTier, tier in Gold/Silver/Bronze, or featured)
+    // Identified official corporate sponsors (excluding institutional academic hosts)
     const filtered = s2026.filter((s) => {
+      const isInstitutional = /his university|iracademy|his training center/i.test(`${s.name} ${s.slug || ""}`);
+      if (isInstitutional) return false;
       const isSponsor =
         s.sponsorTier === "gold" ||
         s.sponsorTier === "silver" ||
@@ -193,12 +220,13 @@ export default function SponsorsSection() {
       return isSponsor;
     });
 
-    // Custom order: SATIM, TECHNO, PROPHEX, followed by others
+    // Custom order: ENERGICAL (Gold), SATIM (Silver), TECHNO (Bronze), PROPHEX (Bronze), followed by others
     const getRank = (name: string, slug: string = "") => {
       const key = `${name} ${slug}`.toLowerCase();
-      if (/satim/i.test(key)) return 1;
-      if (/techno/i.test(key)) return 2;
-      if (/prophex|profex/i.test(key)) return 3;
+      if (/energical/i.test(key)) return 1;
+      if (/satim/i.test(key)) return 2;
+      if (/techno/i.test(key)) return 3;
+      if (/prophex|profex/i.test(key)) return 4;
       return 10;
     };
 
@@ -209,6 +237,7 @@ export default function SponsorsSection() {
 
   const getTheme = (sponsor: SponsorItem): SponsorTheme => {
     const key = (sponsor.slug || sponsor.name).toLowerCase();
+    if (/energical/i.test(key)) return SPONSOR_THEMES.energical;
     if (/satim/i.test(key)) return SPONSOR_THEMES.satim;
     if (/techno/i.test(key)) return SPONSOR_THEMES.techno;
     if (/prophex|profex/i.test(key)) return SPONSOR_THEMES.prophex;
@@ -221,16 +250,29 @@ export default function SponsorsSection() {
       const pts = language === "ar" ? sponsor.keyPoints.ar : (sponsor.keyPoints.en || sponsor.keyPoints.ar);
       if (pts && pts.length > 0) return pts.slice(0, 3);
     }
+    if (/energical/i.test(key)) {
+      return language === "ar"
+        ? [
+            "الراعي الذهبي الرسمي (Gold Sponsor) لصالون HIS Future Talents 2026",
+            "رائد وطني في تصنيع وتوزيع التجهيزات الكهربائية وأنظمة الكابلات وحلول الطاقة",
+            "فرص توظيف وتدريب نوعية لمهندسي الكهرباء، الكفاءات التقنية والتجارية",
+          ]
+        : [
+            "Official Gold Sponsor empowering engineering talents at HIS Future Talents 2026",
+            "National industrial leader in electrical distribution equipment & thermal energy systems",
+            "Direct recruitment for electrical engineers, industrial specialists & commercial talents",
+          ];
+    }
     if (/satim/i.test(key)) {
       return language === "ar"
         ? [
             "المشغل الوطني المرجعي لشبكة الدفع CIB والذهبية في الجزائر",
-            "شريك رائد لابتكارات الفنتك والتحول المالي الرقمي والشمول المالي",
+            "الراعي الفضي الرسمي (Silver Sponsor) لابتكارات الفنتك والتحول المالي الرقمي",
             "فرص استقطاب كفاءات تكنولوجيا المعلومات، الهندسة البرمجية والمالية",
           ]
         : [
             "National CIB & Edahabia interbank payment operator",
-            "Strategic pioneer for Algerian fintech & digital financial inclusion",
+            "Official Silver Sponsor pioneering Algerian fintech & digital financial inclusion",
             "Direct recruitment of IT, software engineering & financial talents",
           ];
     }
@@ -238,12 +280,12 @@ export default function SponsorsSection() {
       return language === "ar"
         ? [
             "الرائد الوطني في توزيع الأدوات المدرسية والمكتبية والفنون الجميلة",
-            "دعم مباشر للمواهب الطلابية والإبداع الأكاديمي والمهني",
+            "الراعي البرونزي الرسمي الداعم للمواهب الطلابية والإبداع الأكاديمي والمهني",
             "شبكة فروع ومتاجر واسعة وموثوقة تغطي مختلف ولايات الوطن",
           ]
         : [
             "National market leader in stationery & creative tools",
-            "Directly empowering university students & academic creativity",
+            "Official Bronze Sponsor directly empowering university students & academic creativity",
             "Nationwide trusted retail and institutional distribution network",
           ];
     }
@@ -252,12 +294,12 @@ export default function SponsorsSection() {
         ? [
             "الرائد الجزائري في توزيع تجهيزات السباكة والترصيص الصحي والتدفئة المركزية",
             "حلول متطورة لشبكات تصريف المياه، العزل، وتجهيزات الري الحديثة",
-            "الراعي الرسمي لصالون HIS Future Talents 2026 وفرص استقطاب للكفاءات",
+            "الراعي البرونزي الرسمي لصالون HIS Future Talents 2026 وفرص استقطاب للكفاءات",
           ]
         : [
             "Premier Algerian distributor of plumbing, central heating, and sanitary systems",
             "Advanced solutions for water drainage, evacuation, and modern agricultural irrigation",
-            "Official Sponsor of HIS Future Talents 2026 offering engineering & commercial opportunities",
+            "Official Bronze Sponsor of HIS Future Talents 2026 offering engineering & commercial opportunities",
           ];
     }
     return [];
@@ -342,10 +384,10 @@ export default function SponsorsSection() {
             </div>
             <div>
               <div className="text-xs font-bold text-slate-900">
-                {language === "ar" ? "3 مؤسسات وطنية كبرى" : "3 National Champions"}
+                {language === "ar" ? "4 مؤسسات وطنية رائدة" : "4 National Champions"}
               </div>
               <div className="text-[11px] text-slate-500 font-medium">
-                {language === "ar" ? "المالية • الأدوات والإبداع • السباكة والري" : "Fintech • Education & Arts • Plumbing & Irrigation"}
+                {language === "ar" ? "الطاقة والكهرباء • الدفع الإلكتروني • الأدوات والمكتبية • السباكة والري" : "Energy & Thermal • Electronic Banking • Stationery • Plumbing & Irrigation"}
               </div>
             </div>
           </div>
@@ -379,9 +421,9 @@ export default function SponsorsSection() {
           </div>
         </div>
 
-        {/* Sponsor Filter Selector Pills */}
+        {/* Tier Filter Selector Pills */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          <div className="inline-flex items-center gap-1.5 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200 flex-wrap">
+          <div className="inline-flex items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-xl border border-slate-200 flex-wrap">
             <button
               onClick={() => setSelectedFilter(null)}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
@@ -390,167 +432,588 @@ export default function SponsorsSection() {
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
               }`}
             >
-              {language === "ar" ? "جميع الرعاة الرسميين" : "All Official Sponsors"}
+              {language === "ar" ? "جميع المستويات (الذهبي، الفضي، البرونزي)" : "All Tiers (Gold, Silver, Bronze)"}
             </button>
-            {officialSponsors.map((s) => {
-              const isSelected = selectedFilter === s.name;
-              return (
-                <button
-                  key={s.name}
-                  onClick={() => setSelectedFilter(isSelected ? null : s.name)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                    isSelected
-                      ? "bg-[#F05A22] text-white shadow-xs scale-105"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
-                  }`}
-                >
-                  {s.name}
-                </button>
-              );
-            })}
+            <button
+              onClick={() => setSelectedFilter(selectedFilter === "gold" ? null : "gold")}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                selectedFilter === "gold"
+                  ? "bg-amber-500 text-slate-950 font-black shadow-xs scale-105"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-amber-100/70"
+              }`}
+            >
+              <Crown className="w-3.5 h-3.5 text-amber-500" />
+              <span>{language === "ar" ? "الذهبي • ENERGICAL" : "Gold • ENERGICAL"}</span>
+            </button>
+            <button
+              onClick={() => setSelectedFilter(selectedFilter === "silver" ? null : "silver")}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                selectedFilter === "silver"
+                  ? "bg-slate-800 text-white font-black shadow-xs scale-105"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-200/60"
+              }`}
+            >
+              <Star className="w-3.5 h-3.5 text-slate-400" />
+              <span>{language === "ar" ? "الفضي • SATIM" : "Silver • SATIM"}</span>
+            </button>
+            <button
+              onClick={() => setSelectedFilter(selectedFilter === "bronze" ? null : "bronze")}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                selectedFilter === "bronze"
+                  ? "bg-[#CD7F32] text-white font-black shadow-xs scale-105"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-amber-50"
+              }`}
+            >
+              <Medal className="w-3.5 h-3.5 text-[#CD7F32]" />
+              <span>{language === "ar" ? "البرونزي • TECHNO & PROPHEX" : "Bronze • TECHNO & PROPHEX"}</span>
+            </button>
           </div>
 
           <div className="text-xs text-slate-500 hidden sm:block">
             {language === "ar"
-              ? "انقر على أي راعٍ أو زر «التفاصيل» لمشاهدة كافة المعلومات"
-              : "Click 'Details' on any card to view full company profile"}
+              ? "انقر على أي راعٍ أو زر «التفاصيل» لمشاهدة كافة المعلومات والفرص"
+              : "Click 'View Details' on any card to explore full company profile & opportunities"}
           </div>
         </div>
 
-        {/* Responsive, Auto-Fitting Unified Sponsor Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {officialSponsors.map((sponsor) => {
-            const theme = getTheme(sponsor);
-            const isHighlighted = selectedFilter === sponsor.name;
-            const isDimmed = selectedFilter !== null && !isHighlighted;
-            const shortDescription = getShortDesc(sponsor, theme);
-
-            return (
-              <div
-                key={sponsor.name}
-                id={`sponsor-card-${sponsor.slug || sponsor.name.toLowerCase()}`}
-                className={`relative rounded-3xl overflow-hidden border p-6 text-white group transition-all duration-300 flex flex-col justify-between h-full shadow-lg ${
-                  isHighlighted
-                    ? "ring-2 ring-white scale-[1.02] shadow-2xl"
-                    : isDimmed
-                    ? "opacity-40 grayscale-[30%] hover:opacity-100 hover:grayscale-0"
-                    : "hover:-translate-y-1.5"
-                }`}
-                style={{
-                  background: theme.cardBackground,
-                  borderColor: theme.borderColor,
-                  boxShadow: theme.glowShadow,
-                }}
-              >
-                {/* Diagonal Metallic Shine Sweep on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
-
-                {/* Ambient Top Glow */}
-                <div
-                  className="absolute top-0 right-0 left-0 h-32 opacity-25 pointer-events-none transition-opacity group-hover:opacity-50"
-                  style={{
-                    background: `radial-gradient(circle at 50% 0%, ${theme.radialGlow}, transparent 70%)`,
-                  }}
-                />
-
-                <div className="relative z-10 space-y-4 flex-1 flex flex-col">
-                  
-                  {/* Top Bar: Official Badge + Domain Pill */}
-                  <div className="flex items-center justify-between gap-2 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/10 text-white border border-white/20">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      {language === "ar" ? "راعي رسمي 2026" : "OFFICIAL SPONSOR 2026"}
-                    </span>
-
-                    <span
-                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[10px] font-bold border"
-                      style={{
-                        backgroundColor: theme.badgeBg,
-                        borderColor: theme.badgeBorder,
-                        color: theme.badgeText,
-                      }}
-                    >
-                      {language === "ar" ? theme.sectorAr : theme.sectorEn}
-                    </span>
-                  </div>
-
-                  {/* High-Contrast Crisp White Logo Container */}
-                  <div
-                    onClick={() => setSelectedModalSponsor(sponsor)}
-                    className="bg-white rounded-2xl p-4 border border-white/20 h-28 flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-[1.02] cursor-pointer"
-                    title={language === "ar" ? "عرض التفاصيل الكاملة" : "View full details"}
-                  >
-                    {sponsor.logo ? (
-                      <img
-                        src={sponsor.logo}
-                        alt={`Logo ${sponsor.name}`}
-                        className="w-full h-full object-contain select-none max-h-20"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <span className="text-2xl font-black text-slate-900 tracking-tight">
-                        {sponsor.name}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Header & Sector Tagline */}
-                  <div className="space-y-1 text-start">
-                    <h3 className="text-xl font-extrabold text-white tracking-tight flex items-center justify-between">
-                      <span>{sponsor.name}</span>
-                      <Sparkles className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" style={{ color: theme.taglineColor }} />
-                    </h3>
-                    <p className="text-xs font-bold" style={{ color: theme.taglineColor }}>
-                      {language === "ar" ? theme.taglineAr : theme.taglineEn}
-                    </p>
-                  </div>
-
-                  {/* Concise Direct Description (High-contrast text on brand background) */}
-                  <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal text-start line-clamp-3 flex-1">
-                    {shortDescription}
-                  </p>
-
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* TIER 1: 🏆 PREMIER GOLD SPONSOR (الراعي الذهبي الرسمي)             */}
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {(!selectedFilter || selectedFilter === "gold") && (
+          <div className="space-y-4 pt-2">
+            {/* Gold Tier Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-amber-200/70">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-500 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/25 shrink-0">
+                  <Crown className="w-6 h-6" />
                 </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                      {language === "ar" ? "الراعي الذهبي الرسمي" : "Official Gold Sponsor"}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-xs">
+                      <Sparkles className="w-3 h-3" />
+                      PRESTIGE GOLD
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-medium">
+                    {language === "ar"
+                      ? "أعلى درجات الرعاية والشراكة الاستراتيجية لصالون HIS Future Talents 2026"
+                      : "Pinnacle strategic partnership empowering national engineering, energy and industrial leadership"}
+                  </p>
+                </div>
+              </div>
 
-                {/* Card Footer: Show More Modal Button + Direct Website Link */}
-                <div className="relative z-10 pt-4 mt-4 border-t border-white/10 flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedModalSponsor(sponsor)}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 cursor-pointer group/btn"
+              <div className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-xl self-start sm:self-auto">
+                {language === "ar" ? "رعاية ذهبية حصرية" : "Exclusive Gold Partnership"}
+              </div>
+            </div>
+
+            {/* Gold Sponsor Card: Majestic Wide Spotlight */}
+            {officialSponsors
+              .filter((s) => {
+                const k = `${s.name} ${s.slug}`.toLowerCase();
+                return s.sponsorTier === "gold" || s.tier === "Gold" || /energical/i.test(k);
+              })
+              .map((sponsor) => {
+                const theme = getTheme(sponsor);
+                const highlights = getHighlights(sponsor);
+                const shortDescription = getShortDesc(sponsor, theme);
+
+                return (
+                  <div
+                    key={sponsor.name}
+                    id={`sponsor-gold-${sponsor.slug || sponsor.name.toLowerCase()}`}
+                    className="relative rounded-3xl overflow-hidden border-2 border-amber-400/60 p-6 md:p-8 lg:p-10 text-white shadow-2xl transition-all duration-300 group hover:border-amber-300 hover:shadow-amber-500/20"
                     style={{
-                      backgroundColor: theme.buttonBg,
-                      border: `1px solid ${theme.buttonBorder}`,
-                      color: theme.buttonText,
+                      background: theme.cardBackground,
+                      boxShadow: theme.glowShadow,
                     }}
                   >
-                    <Info className="w-3.5 h-3.5 opacity-90 group-hover/btn:opacity-100" />
-                    <span>{language === "ar" ? "المزيد من التفاصيل" : "View Details"}</span>
-                  </button>
+                    {/* Ambient Gold Radial Flare & Shimmer Sweep */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+                    <div
+                      className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-35 pointer-events-none blur-2xl"
+                      style={{ background: theme.radialGlow }}
+                    />
+                    <div className="absolute top-4 right-6 opacity-5 pointer-events-none hidden md:block">
+                      <Crown className="w-44 h-44 text-amber-400" />
+                    </div>
 
-                  {sponsor.website && (
-                    <a
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-10 h-10 rounded-xl transition-colors cursor-pointer shrink-0"
-                      style={{
-                        backgroundColor: theme.buttonBg,
-                        border: `1px solid ${theme.buttonBorder}`,
-                        color: theme.buttonText,
-                      }}
-                      title={language === "ar" ? "زيارة الموقع الرسمي" : "Visit official website"}
-                      aria-label={language === "ar" ? "زيارة الموقع الرسمي" : "Visit official website"}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  )}
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                      
+                      {/* Left Column: Premium Logo Showcase & Core Identity */}
+                      <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-start space-y-4">
+                        
+                        {/* Gold Badge & Sector */}
+                        <div className="flex items-center gap-2 flex-wrap justify-center lg:justify-start">
+                          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-400/25 text-amber-300 border border-amber-400/60 shadow-sm shadow-amber-400/30">
+                            <Crown className="w-3.5 h-3.5 text-amber-300" />
+                            {language === "ar" ? "الراعي الذهبي الرسمي 2026" : "OFFICIAL GOLD SPONSOR 2026"}
+                          </span>
+                        </div>
+
+                        {/* White High-Contrast Logo Container */}
+                        <div
+                          onClick={() => setSelectedModalSponsor(sponsor)}
+                          className="w-full max-w-xs h-36 bg-white rounded-2xl p-5 border-2 border-amber-400/40 flex items-center justify-center shadow-xl hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+                          title={language === "ar" ? "عرض التفاصيل الكاملة" : "View full details"}
+                        >
+                          {sponsor.logo ? (
+                            <img
+                              src={sponsor.logo}
+                              alt={`Logo ${sponsor.name}`}
+                              className="w-full h-full object-contain select-none max-h-24"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-3xl font-black text-slate-950 tracking-tight">
+                              {sponsor.name}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="space-y-1">
+                          <h4 className="text-2xl font-black text-white flex items-center gap-2">
+                            <span>{sponsor.name}</span>
+                            <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
+                          </h4>
+                          <span
+                            className="inline-block px-3 py-1 rounded-lg text-xs font-bold border"
+                            style={{
+                              backgroundColor: theme.badgeBg,
+                              borderColor: theme.badgeBorder,
+                              color: theme.badgeText,
+                            }}
+                          >
+                            {language === "ar" ? theme.sectorAr : theme.sectorEn}
+                          </span>
+                        </div>
+
+                        {sponsor.website && (
+                          <a
+                            href={sponsor.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border border-amber-400/40 bg-amber-400/10 hover:bg-amber-400/20 text-amber-200 transition-all cursor-pointer"
+                          >
+                            <span>{language === "ar" ? "زيارة موقع ENERGICAL" : "Visit Energical Website"}</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Right Column: Narrative, Key Points, Opportunities & CTAs */}
+                      <div className="lg:col-span-8 space-y-5 text-start border-t lg:border-t-0 lg:border-s border-amber-400/20 pt-6 lg:pt-0 lg:ps-8">
+                        
+                        <div className="space-y-2">
+                          <h4 className="text-lg md:text-xl font-extrabold text-amber-300 tracking-tight">
+                            {language === "ar" ? theme.taglineAr : theme.taglineEn}
+                          </h4>
+                          <p className="text-slate-100 text-sm md:text-base leading-relaxed font-normal">
+                            {shortDescription}
+                          </p>
+                        </div>
+
+                        {/* Highlights Grid */}
+                        {highlights.length > 0 && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                            {highlights.map((point, i) => (
+                              <div
+                                key={i}
+                                className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-400/10 border border-amber-400/25 text-xs text-amber-50 font-medium"
+                              >
+                                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                <span>{point}</span>
+                              </div>
+                            ))}
+                            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-amber-400/10 border border-amber-400/25 text-xs text-amber-300 font-bold">
+                              <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
+                              <span>
+                                {language === "ar"
+                                  ? "فرص توظيف وتدريب حصرية للمشاركين في المعرض"
+                                  : "Exclusive recruitment & career opportunities at the event"}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Card Bottom CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-3 pt-3">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedModalSponsor(sponsor)}
+                            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                          >
+                            <Info className="w-4 h-4" />
+                            <span>{language === "ar" ? "عرض التفاصيل الكاملة والفرص المعروضة" : "View Full Profile & Opportunities"}</span>
+                          </button>
+
+                          {sponsor.website && (
+                            <a
+                              href={sponsor.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs transition-all border border-white/20 cursor-pointer"
+                            >
+                              <span>{language === "ar" ? "الموقع الرسمي" : "Official Website"}</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        )}
+
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* TIER 2: 🥈 DISTINGUISHED SILVER SPONSOR (الراعي الفضي الرسمي)       */}
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {(!selectedFilter || selectedFilter === "silver") && (
+          <div className="space-y-4 pt-4">
+            {/* Silver Tier Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-200">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-400 text-slate-900 flex items-center justify-center shadow-md shrink-0">
+                  <Star className="w-6 h-6" />
                 </div>
-
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                      {language === "ar" ? "الراعي الفضي الرسمي" : "Official Silver Sponsor"}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-wider border border-slate-300">
+                      <Star className="w-3 h-3" />
+                      DISTINGUISHED SILVER
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-medium">
+                    {language === "ar"
+                      ? "المشغل الوطني المرجعي لشبكة الدفع الإلكتروني والتحول الرقمي البنكي في الجزائر"
+                      : "National interbank switch operator driving digital financial transformation and electronic banking"}
+                  </p>
+                </div>
               </div>
-            );
-          })}
-        </div>
+
+              <div className="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1 rounded-xl self-start sm:self-auto">
+                {language === "ar" ? "رعاية فضية متميزة" : "Silver Strategic Partner"}
+              </div>
+            </div>
+
+            {/* Silver Sponsor Card: Refined Horizontal Showcase */}
+            {officialSponsors
+              .filter((s) => {
+                const k = `${s.name} ${s.slug}`.toLowerCase();
+                return s.sponsorTier === "silver" || s.tier === "Silver" || /satim/i.test(k);
+              })
+              .map((sponsor) => {
+                const theme = getTheme(sponsor);
+                const highlights = getHighlights(sponsor);
+                const shortDescription = getShortDesc(sponsor, theme);
+
+                return (
+                  <div
+                    key={sponsor.name}
+                    id={`sponsor-silver-${sponsor.slug || sponsor.name.toLowerCase()}`}
+                    className="relative rounded-3xl overflow-hidden border-2 border-slate-300/60 p-6 md:p-8 text-white shadow-xl transition-all duration-300 group hover:border-white hover:shadow-2xl"
+                    style={{
+                      background: theme.cardBackground,
+                      boxShadow: theme.glowShadow,
+                    }}
+                  >
+                    {/* Diagonal Metallic Shine Sweep */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+                    <div
+                      className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-30 pointer-events-none blur-2xl"
+                      style={{ background: theme.radialGlow }}
+                    />
+
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                      
+                      {/* Left Column: Logo & Core Brand */}
+                      <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-start space-y-4">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-slate-200/20 text-slate-100 border border-slate-300/50 shadow-sm">
+                          <span className="w-2 h-2 rounded-full bg-slate-200 animate-pulse" />
+                          {language === "ar" ? "الراعي الفضي • SILVER 2026" : "OFFICIAL SILVER SPONSOR 2026"}
+                        </span>
+
+                        <div
+                          onClick={() => setSelectedModalSponsor(sponsor)}
+                          className="w-full max-w-xs h-32 bg-white rounded-2xl p-4 border-2 border-slate-300/40 flex items-center justify-center shadow-lg hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+                          title={language === "ar" ? "عرض التفاصيل الكاملة" : "View full details"}
+                        >
+                          {sponsor.logo ? (
+                            <img
+                              src={sponsor.logo}
+                              alt={`Logo ${sponsor.name}`}
+                              className="w-full h-full object-contain select-none max-h-20"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-3xl font-black text-slate-950 tracking-tight">
+                              {sponsor.name}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="space-y-1">
+                          <h4 className="text-2xl font-black text-white flex items-center gap-2">
+                            <span>{sponsor.name}</span>
+                            <Star className="w-5 h-5 text-[#FF6B7A]" />
+                          </h4>
+                          <span
+                            className="inline-block px-3 py-1 rounded-lg text-xs font-bold border"
+                            style={{
+                              backgroundColor: theme.badgeBg,
+                              borderColor: theme.badgeBorder,
+                              color: theme.badgeText,
+                            }}
+                          >
+                            {language === "ar" ? theme.sectorAr : theme.sectorEn}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Right Column: Information & Actions */}
+                      <div className="lg:col-span-8 space-y-4 text-start border-t lg:border-t-0 lg:border-s border-white/15 pt-6 lg:pt-0 lg:ps-8">
+                        <div className="space-y-1.5">
+                          <h4 className="text-lg md:text-xl font-extrabold text-[#FF6B7A] tracking-tight">
+                            {language === "ar" ? theme.taglineAr : theme.taglineEn}
+                          </h4>
+                          <p className="text-slate-200 text-sm md:text-base leading-relaxed font-normal">
+                            {shortDescription}
+                          </p>
+                        </div>
+
+                        {highlights.length > 0 && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                            {highlights.map((point, i) => (
+                              <div
+                                key={i}
+                                className="flex items-start gap-2 p-2.5 rounded-xl bg-white/10 border border-white/15 text-xs text-white/95 font-medium"
+                              >
+                                <CheckCircle2 className="w-4 h-4 text-[#FF6B7A] shrink-0 mt-0.5" />
+                                <span>{point}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        <div className="flex flex-wrap items-center gap-3 pt-2">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedModalSponsor(sponsor)}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                            style={{
+                              backgroundColor: theme.buttonBg,
+                              border: `1px solid ${theme.buttonBorder}`,
+                              color: theme.buttonText,
+                            }}
+                          >
+                            <Info className="w-4 h-4" />
+                            <span>{language === "ar" ? "المزيد من التفاصيل والفرص" : "View Details & Opportunities"}</span>
+                          </button>
+
+                          {sponsor.website && (
+                            <a
+                              href={sponsor.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors border border-white/20 cursor-pointer"
+                            >
+                              <span>{language === "ar" ? "الموقع الرسمي لـ SATIM" : "Visit SATIM Website"}</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        )}
+
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* TIER 3: 🥉 OFFICIAL BRONZE SPONSORS (الرعاة البرونزيون الرسميون)     */}
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {(!selectedFilter || selectedFilter === "bronze") && (
+          <div className="space-y-4 pt-4">
+            {/* Bronze Tier Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-amber-200/60">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#CD7F32] to-[#8C4A15] text-white flex items-center justify-center shadow-md shadow-[#CD7F32]/20 shrink-0">
+                  <Medal className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                      {language === "ar" ? "الرعاة البرونزيون الرسميون" : "Official Bronze Sponsors"}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-amber-100 text-[#8C4A15] text-[10px] font-black uppercase tracking-wider border border-[#CD7F32]/40">
+                      <Medal className="w-3 h-3" />
+                      EXCELLENCE BRONZE
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-medium">
+                    {language === "ar"
+                      ? "شركاء النجاح الملتزمون بدعم الإبداع الأكاديمي، الهندسي والتجهيزات المهنية"
+                      : "Dedicated champions advancing academic tools, modern sanitary engineering and student empowerment"}
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-xs font-bold text-[#8C4A15] bg-amber-50 border border-[#CD7F32]/30 px-3 py-1 rounded-xl self-start sm:self-auto">
+                {language === "ar" ? "رعاية برونزية رسمية" : "Official Bronze Tier"}
+              </div>
+            </div>
+
+            {/* Bronze Sponsors Grid: Balanced 2-Column Showcase */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+              {officialSponsors
+                .filter((s) => {
+                  const k = `${s.name} ${s.slug}`.toLowerCase();
+                  return (
+                    s.sponsorTier === "bronze" ||
+                    s.tier === "Bronze" ||
+                    /techno/i.test(k) ||
+                    /prophex|profex/i.test(k)
+                  );
+                })
+                .map((sponsor) => {
+                  const theme = getTheme(sponsor);
+                  const highlights = getHighlights(sponsor);
+                  const shortDescription = getShortDesc(sponsor, theme);
+
+                  return (
+                    <div
+                      key={sponsor.name}
+                      id={`sponsor-bronze-${sponsor.slug || sponsor.name.toLowerCase()}`}
+                      className="relative rounded-3xl overflow-hidden border-2 p-6 md:p-7 text-white group transition-all duration-300 flex flex-col justify-between h-full shadow-lg hover:-translate-y-1.5"
+                      style={{
+                        background: theme.cardBackground,
+                        borderColor: theme.borderColor,
+                        boxShadow: theme.glowShadow,
+                      }}
+                    >
+                      {/* Metallic Sweep */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+                      <div className="relative z-10 space-y-4 flex-1 flex flex-col">
+                        
+                        {/* Top Bar: Bronze Badge + Sector */}
+                        <div className="flex items-center justify-between gap-2 flex-wrap">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#CD7F32]/25 text-[#F5C28F] border border-[#CD7F32]/50 shadow-sm shadow-[#CD7F32]/20">
+                            <Medal className="w-3 h-3 text-[#F5C28F]" />
+                            {language === "ar" ? "الراعي البرونزي • BRONZE" : "BRONZE SPONSOR 2026"}
+                          </span>
+
+                          <span
+                            className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[10px] font-bold border"
+                            style={{
+                              backgroundColor: theme.badgeBg,
+                              borderColor: theme.badgeBorder,
+                              color: theme.badgeText,
+                            }}
+                          >
+                            {language === "ar" ? theme.sectorAr : theme.sectorEn}
+                          </span>
+                        </div>
+
+                        {/* High-Contrast Crisp White Logo Container */}
+                        <div
+                          onClick={() => setSelectedModalSponsor(sponsor)}
+                          className="bg-white rounded-2xl p-4 border border-white/20 h-28 flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-[1.02] cursor-pointer"
+                          title={language === "ar" ? "عرض التفاصيل الكاملة" : "View full details"}
+                        >
+                          {sponsor.logo ? (
+                            <img
+                              src={sponsor.logo}
+                              alt={`Logo ${sponsor.name}`}
+                              className="w-full h-full object-contain select-none max-h-20"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-2xl font-black text-slate-900 tracking-tight">
+                              {sponsor.name}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Title & Tagline */}
+                        <div className="space-y-1 text-start">
+                          <h4 className="text-xl font-extrabold text-white tracking-tight flex items-center justify-between">
+                            <span>{sponsor.name}</span>
+                            <Medal className="w-4 h-4 text-[#F5C28F] opacity-75 group-hover:opacity-100" />
+                          </h4>
+                          <p className="text-xs font-bold" style={{ color: theme.taglineColor }}>
+                            {language === "ar" ? theme.taglineAr : theme.taglineEn}
+                          </p>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal text-start line-clamp-3 flex-1">
+                          {shortDescription}
+                        </p>
+
+                        {/* Highlight Pill */}
+                        {highlights.length > 0 && (
+                          <div className="p-2.5 rounded-xl bg-white/10 border border-white/15 text-[11px] text-white/90 flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#F5C28F] shrink-0 mt-0.5" />
+                            <span>{highlights[0]}</span>
+                          </div>
+                        )}
+
+                      </div>
+
+                      {/* Card Footer: Details Button + Official Website Link */}
+                      <div className="relative z-10 pt-4 mt-4 border-t border-white/10 flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedModalSponsor(sponsor)}
+                          className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 cursor-pointer group/btn"
+                          style={{
+                            backgroundColor: theme.buttonBg,
+                            border: `1px solid ${theme.buttonBorder}`,
+                            color: theme.buttonText,
+                          }}
+                        >
+                          <Info className="w-3.5 h-3.5 opacity-90 group-hover/btn:opacity-100" />
+                          <span>{language === "ar" ? "المزيد من التفاصيل" : "View Details"}</span>
+                        </button>
+
+                        {sponsor.website && (
+                          <a
+                            href={sponsor.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-10 h-10 rounded-xl transition-colors cursor-pointer shrink-0"
+                            style={{
+                              backgroundColor: theme.buttonBg,
+                              border: `1px solid ${theme.buttonBorder}`,
+                              color: theme.buttonText,
+                            }}
+                            title={language === "ar" ? "زيارة الموقع الرسمي" : "Visit official website"}
+                            aria-label={language === "ar" ? "زيارة الموقع الرسمي" : "Visit official website"}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        )}
 
         {/* Bottom VIP Note & Invitation */}
         <div className="rounded-2xl bg-gradient-to-r from-[#002855] via-[#003876] to-[#0E1B2C] border border-[#003876]/30 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-start text-white shadow-xl">
@@ -637,7 +1100,13 @@ export default function SponsorsSection() {
                     }}
                   >
                     <Award className="w-3.5 h-3.5" style={{ color: theme.primaryColor }} />
-                    {language === "ar" ? "راعي رسمي • دورة 2026" : "Official Sponsor • 2026"}
+                    {selectedModalSponsor.sponsorTier === "gold" || selectedModalSponsor.tier === "Gold"
+                      ? (language === "ar" ? "الراعي الذهبي الرسمي • دورة 2026" : "Official Gold Sponsor • 2026")
+                      : selectedModalSponsor.sponsorTier === "silver" || selectedModalSponsor.tier === "Silver"
+                      ? (language === "ar" ? "الراعي الفضي الرسمي • دورة 2026" : "Official Silver Sponsor • 2026")
+                      : selectedModalSponsor.sponsorTier === "bronze" || selectedModalSponsor.tier === "Bronze"
+                      ? (language === "ar" ? "الراعي البرونزي الرسمي • دورة 2026" : "Official Bronze Sponsor • 2026")
+                      : (language === "ar" ? "راعي رسمي • دورة 2026" : "Official Sponsor • 2026")}
                   </span>
                   <h3 className="text-2xl font-black text-white tracking-tight truncate">
                     {selectedModalSponsor.name}
