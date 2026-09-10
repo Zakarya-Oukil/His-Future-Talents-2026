@@ -44,6 +44,8 @@ export type StudentApplication = {
   interests?: string[];
   howDidYouHear?: string;
   additionalComments?: string;
+  consentDataProtection?: boolean;
+  consentCvSharing?: boolean;
   status: "Nouveau" | "En cours" | "Confirmé" | "Arrivé" | "Refusé";
   submittedAt: string;
   createdAt?: string | Date;
@@ -765,6 +767,8 @@ async function autoSeedDatabaseIfEmpty() {
               interests: s.interests || [],
               howDidYouHear: s.howDidYouHear || "",
               additionalComments: s.additionalComments || "",
+              consentDataProtection: s.consentDataProtection || false,
+              consentCvSharing: s.consentCvSharing || false,
               status: s.status || "Nouveau",
               submittedAt: s.submittedAt ? new Date(s.submittedAt) : new Date(),
             },
@@ -924,6 +928,8 @@ export async function getStudentApplications(): Promise<StudentApplication[]> {
           cvFileName: s.cvFileName || "",
           howDidYouHear: s.howDidYouHear || "",
           additionalComments: s.additionalComments || "",
+          consentDataProtection: s.consentDataProtection ?? false,
+          consentCvSharing: s.consentCvSharing ?? false,
           status: s.status as any,
           submittedAt: s.submittedAt.toISOString(),
         }));
@@ -947,6 +953,8 @@ export async function saveStudentApplication(
     ...appData,
     id: newId,
     badgeId: badgeId,
+    consentDataProtection: appData.consentDataProtection ?? false,
+    consentCvSharing: appData.consentCvSharing ?? false,
     status: "Nouveau",
     submittedAt: now.toISOString(),
   };
@@ -975,6 +983,8 @@ export async function saveStudentApplication(
           interests: appData.interests || [],
           howDidYouHear: appData.howDidYouHear || "",
           additionalComments: appData.additionalComments || "",
+          consentDataProtection: appData.consentDataProtection ?? false,
+          consentCvSharing: appData.consentCvSharing ?? false,
           status: "Nouveau",
           submittedAt: now,
         },
@@ -988,6 +998,8 @@ export async function saveStudentApplication(
         cvFileName: created.cvFileName || "",
         howDidYouHear: created.howDidYouHear || "",
         additionalComments: created.additionalComments || "",
+        consentDataProtection: created.consentDataProtection ?? false,
+        consentCvSharing: created.consentCvSharing ?? false,
         status: created.status as any,
         submittedAt: created.submittedAt.toISOString(),
       };
@@ -1021,6 +1033,8 @@ export async function updateStudentApplicationStatus(
         cvFileName: updated.cvFileName || "",
         howDidYouHear: updated.howDidYouHear || "",
         additionalComments: updated.additionalComments || "",
+        consentDataProtection: updated.consentDataProtection ?? false,
+        consentCvSharing: updated.consentCvSharing ?? false,
         status: updated.status as any,
         submittedAt: updated.submittedAt.toISOString(),
       };

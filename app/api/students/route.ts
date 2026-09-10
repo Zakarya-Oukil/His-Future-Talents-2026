@@ -70,6 +70,8 @@ export async function POST(req: Request) {
       interests,
       howDidYouHear,
       additionalComments,
+      consentDataProtection,
+      consentCvSharing,
       autoApprove,
     } = body;
 
@@ -100,6 +102,8 @@ export async function POST(req: Request) {
       interests: Array.isArray(interests) ? interests : [],
       howDidYouHear: howDidYouHear ? String(howDidYouHear).trim() : "",
       additionalComments: additionalComments ? String(additionalComments).trim() : "",
+      consentDataProtection: Boolean(consentDataProtection),
+      consentCvSharing: Boolean(consentCvSharing),
     });
 
     // Automatically confirm registration and send the official pass badge PDF via email

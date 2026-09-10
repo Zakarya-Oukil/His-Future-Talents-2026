@@ -37,7 +37,7 @@ export default function StudentRegistrationForm({
   const { language, dir } = useLanguage();
   const isDark = variant === "dark";
 
-  const [formStep, setFormStep] = useState<1 | 2 | 3 | 4>(1);
+  const [formStep, setFormStep] = useState<1 | 2 | 3>(1);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -53,6 +53,8 @@ export default function StudentRegistrationForm({
     seekingObjectives: [] as string[],
     howDidYouHear: "",
     additionalComments: "",
+    consentDataProtection: false,
+    consentCvSharing: false,
   });
 
   const [isUploadingCv, setIsUploadingCv] = useState(false);
@@ -165,7 +167,7 @@ export default function StudentRegistrationForm({
 
   const handleNextStep = () => {
     if (validateCurrentStep()) {
-      setFormStep((prev) => Math.min(prev + 1, 4) as any);
+      setFormStep((prev) => Math.min(prev + 1, 3) as any);
     }
   };
 
@@ -313,13 +315,58 @@ export default function StudentRegistrationForm({
                   </div>
                 )}
               </div>
+
+              {/* Consent Badges in Account Details */}
+              <div className={`p-3.5 rounded-2xl space-y-1.5 ${isDark ? "bg-white/5 border border-white/10" : "bg-slate-50 border border-slate-200"}`}>
+                <h4 className={`font-black text-xs uppercase ${isDark ? "text-[#FFBD0E]" : "text-[#003876]"}`}>
+                  {language === "ar" ? "3. الموافقات والخيارات" : "3. Consents & Permissions"}
+                </h4>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className={`px-2.5 py-1 rounded-lg text-[10.5px] font-bold flex items-center gap-1 ${
+                    submittedStudent.consentDataProtection
+                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                      : "bg-white/5 text-white/50 border border-white/10"
+                  }`}>
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>
+                      {submittedStudent.consentDataProtection
+                        ? (language === "ar" ? "موافقة معالجة المعطيات (قانون 18-07) مسجلة" : "Data protection consent: Granted")
+                        : (language === "ar" ? "معالجة المعطيات: غير مفعلة" : "Data protection consent: Not granted")}
+                    </span>
+                  </span>
+
+                  <span className={`px-2.5 py-1 rounded-lg text-[10.5px] font-bold flex items-center gap-1 ${
+                    submittedStudent.consentCvSharing
+                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                      : "bg-white/5 text-white/50 border border-white/10"
+                  }`}>
+                    <Share2 className="w-3 h-3" />
+                    <span>
+                      {submittedStudent.consentCvSharing
+                        ? (language === "ar" ? "مشاركة السيرة الذاتية مع المؤسسات: مفعلة" : "CV sharing with recruiters: Active")
+                        : (language === "ar" ? "مشاركة السيرة الذاتية: غير مفعلة" : "CV sharing: Not active")}
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           )}
         </div>
       ) : (
 
-        /* ── 4-STEP STREAMLINED WIZARD ── */
-        <form onSubmit={handleSubmit} className="space-y-4 text-start">
+        /* ── 3-STEP STREAMLINED WIZARD ── */
+        <form
+          onSubmit={handleSubmit}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.target as HTMLElement).tagName !== "TEXTAREA") {
+              if (formStep < 3) {
+                e.preventDefault();
+                handleNextStep();
+              }
+            }
+          }}
+          className="space-y-4 text-start"
+        >
           
           {/* Step Progress Pills */}
           <div className="space-y-2">
@@ -327,8 +374,7 @@ export default function StudentRegistrationForm({
               {[
                 { num: 1, title: language === "ar" ? "1. المعلومات" : "1. Info" },
                 { num: 2, title: language === "ar" ? "2. المسار & CV" : "2. Career & CV" },
-                { num: 3, title: language === "ar" ? "3. أهدافك" : "3. Goals" },
-                { num: 4, title: language === "ar" ? "4. التأكيد" : "4. Pass" },
+                { num: 3, title: language === "ar" ? "3. أهدافك & التأكيد" : "3. Goals & Pass" },
               ].map((item) => {
                 const isActive = formStep === item.num;
                 const isCompleted = formStep > item.num;
@@ -368,7 +414,7 @@ export default function StudentRegistrationForm({
             <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-[#F05A22] to-[#FFBD0E] transition-all duration-300"
-                style={{ width: `${(formStep / 4) * 100}%` }}
+                style={{ width: `${(formStep / 3) * 100}%` }}
               />
             </div>
           </div>
@@ -605,84 +651,139 @@ export default function StudentRegistrationForm({
             </div>
           )}
 
-          {/* ── STEP 3: Goals & Objectives ── */}
+          {/* ── STEP 3: Goals & Objectives + Optional Legal Consents ── */}
           {formStep === 3 && (
-            <div className="space-y-3 animate-fadeIn">
-              <label className={labelClass}>{language === "ar" ? "ما الذي تبحث عنه في الصالون ؟ (اختيارات متعددة) *" : "What are your primary goals at HIS Future Talents? *"}</label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {[
-                  { id: "فرص تدريب", label: language === "ar" ? "فرص تدريب ومشاريع تخرج (PFE)" : "Internships & End-of-Studies Projects (PFE)" },
-                  { id: "فرص عمل", label: language === "ar" ? "فرص عمل وتوظيف" : "Job Offers & Career Recruitment" },
-                  { id: "بناء شبكة علاقات مهنية", label: language === "ar" ? "بناء شبكة علاقات مهنية" : "Professional Networking" },
-                  { id: "التعرف على الشركات والمؤسسات", label: language === "ar" ? "التعرف على الشركات والمؤسسات" : "Discovering Leading Companies" },
-                  { id: "حضور المحاضرات والورشات", label: language === "ar" ? "حضور المحاضرات والورشات" : "Attending Keynotes & Masterclasses" },
-                  { id: "أخرى", label: language === "ar" ? "أخرى" : "Other Interests" },
-                ].map((item) => {
-                  const checked = formData.seekingObjectives.includes(item.id);
-                  return (
-                    <button
-                      type="button"
-                      key={item.id}
-                      onClick={() => handleSeekingToggle(item.id)}
-                      className={`p-2.5 rounded-xl border text-xs font-bold flex items-center justify-between transition-all ${
-                        checked
-                          ? "bg-[#F05A22] text-white border-[#F05A22] shadow-xs"
-                          : isDark
-                          ? "bg-white/5 text-white/80 border-white/10 hover:bg-white/10"
-                          : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                      }`}
-                    >
-                      <span className="truncate pr-1">{item.label}</span>
-                      <div className={`w-3.5 h-3.5 rounded-md border flex items-center justify-center shrink-0 ${
-                        checked ? "bg-white text-[#F05A22]" : "border-white/30"
-                      }`}>
-                        {checked && <Check className="w-2.5 h-2.5 stroke-[3]" />}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* ── STEP 4: Finalization ── */}
-          {formStep === 4 && (
-            <div className="space-y-3 animate-fadeIn">
+            <div className="space-y-3.5 animate-fadeIn">
               <div>
-                <label className={labelClass}>{language === "ar" ? "كيف تعرفت على الحدث ؟" : "How did you hear about HIS Future Talents?"}</label>
-                <div className="grid grid-cols-3 gap-1.5">
-                  {["Instagram", "LinkedIn", "Facebook", "TikTok", "University", "Other"].map((src) => (
-                    <button
-                      type="button"
-                      key={src}
-                      onClick={() => setFormData({ ...formData, howDidYouHear: src })}
-                      className={`p-2 rounded-xl border text-[11px] font-bold text-center transition-all ${
-                        formData.howDidYouHear === src
-                          ? "bg-[#F05A22] text-white border-[#F05A22]"
-                          : isDark
-                          ? "bg-white/5 text-white/80 border-white/10 hover:bg-white/10"
-                          : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                      }`}
-                    >
-                      {src}
-                    </button>
-                  ))}
+                <label className={labelClass}>{language === "ar" ? "ما الذي تبحث عنه في الصالون ؟ (اختيارات متعددة) *" : "What are your primary goals at HIS Future Talents? *"}</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+                  {[
+                    { id: "فرص تدريب", label: language === "ar" ? "فرص تدريب ومشاريع تخرج (PFE)" : "Internships & End-of-Studies Projects (PFE)" },
+                    { id: "فرص عمل", label: language === "ar" ? "فرص عمل وتوظيف" : "Job Offers & Career Recruitment" },
+                    { id: "بناء شبكة علاقات مهنية", label: language === "ar" ? "بناء شبكة علاقات مهنية" : "Professional Networking" },
+                    { id: "التعرف على الشركات والمؤسسات", label: language === "ar" ? "التعرف على الشركات والمؤسسات" : "Discovering Leading Companies" },
+                    { id: "حضور المحاضرات والورشات", label: language === "ar" ? "حضور المحاضرات والورشات" : "Attending Keynotes & Masterclasses" },
+                    { id: "أخرى", label: language === "ar" ? "أخرى" : "Other Interests" },
+                  ].map((item) => {
+                    const checked = formData.seekingObjectives.includes(item.id);
+                    return (
+                      <button
+                        type="button"
+                        key={item.id}
+                        onClick={() => handleSeekingToggle(item.id)}
+                        className={`p-2.5 rounded-xl border text-xs font-bold flex items-center justify-between transition-all ${
+                          checked
+                            ? "bg-[#F05A22] text-white border-[#F05A22] shadow-xs"
+                            : isDark
+                            ? "bg-white/5 text-white/80 border-white/10 hover:bg-white/10"
+                            : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                        }`}
+                      >
+                        <span className="truncate pr-1">{item.label}</span>
+                        <div className={`w-3.5 h-3.5 rounded-md border flex items-center justify-center shrink-0 ${
+                          checked ? "bg-white text-[#F05A22]" : "border-white/30"
+                        }`}>
+                          {checked && <Check className="w-2.5 h-2.5 stroke-[3]" />}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              <div>
-                <label className={labelClass}>{language === "ar" ? "ملاحظات أو أسئلة (اختياري)" : "Questions or Remarks (Optional)"}</label>
-                <textarea
-                  rows={2}
-                  placeholder={language === "ar" ? "ملاحظاتك..." : "Any additional notes..."}
-                  value={formData.additionalComments}
-                  onChange={(e) => setFormData({ ...formData, additionalComments: e.target.value })}
-                  className={inputClass}
-                />
+              {/* ── OPTIONAL LEGAL CONSENT CHECKBOXES ── */}
+              <div className="space-y-2 pt-1 border-t border-white/10">
+                {/* Consent 1: Personal Data Protection */}
+                <label
+                  onClick={() => setFormData((prev) => ({ ...prev, consentDataProtection: !prev.consentDataProtection }))}
+                  className={`p-2.5 rounded-xl border flex items-start gap-2.5 transition-all cursor-pointer select-none ${
+                    formData.consentDataProtection
+                      ? isDark
+                        ? "bg-white/10 border-emerald-400/60 text-white"
+                        : "bg-emerald-50 border-emerald-500 text-slate-900"
+                      : isDark
+                      ? "bg-white/5 border-white/10 hover:border-white/20 text-white/80"
+                      : "bg-slate-50 border-slate-200 hover:border-slate-300 text-slate-700"
+                  }`}
+                >
+                  <div
+                    className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-all ${
+                      formData.consentDataProtection
+                        ? "bg-emerald-500 border-emerald-500 text-white"
+                        : isDark
+                        ? "border-white/30 bg-white/5"
+                        : "border-slate-300 bg-white"
+                    }`}
+                  >
+                    {formData.consentDataProtection && <Check className="w-3 h-3 stroke-[3]" />}
+                  </div>
+                  <div className="space-y-0.5 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[11.5px] font-black tracking-wide text-[#FFBD0E]">
+                        {language === "ar" ? "حماية المعطيات الشخصية" : "Personal Data Protection"}
+                      </span>
+                      <span className="text-[9.5px] font-bold opacity-60">
+                        {language === "ar" ? "(اختياري)" : "(Optional)"}
+                      </span>
+                    </div>
+                    <p className="text-[10.5px] leading-relaxed opacity-90">
+                      {language === "ar"
+                        ? "أوافق على جمع ومعالجة معطياتي الشخصية وفقًا لأحكام القانون 18-07 المعدل والمتمم."
+                        : "I agree to the collection and processing of my personal data in accordance with the provisions of Law 18-07 as amended and supplemented."}
+                    </p>
+                  </div>
+                </label>
+
+                {/* Consent 2: CV Sharing with Recruiters */}
+                <label
+                  onClick={() => setFormData((prev) => ({ ...prev, consentCvSharing: !prev.consentCvSharing }))}
+                  className={`p-2.5 rounded-xl border flex items-start gap-2.5 transition-all cursor-pointer select-none ${
+                    formData.consentCvSharing
+                      ? isDark
+                        ? "bg-white/10 border-emerald-400/60 text-white"
+                        : "bg-emerald-50 border-emerald-500 text-slate-900"
+                      : isDark
+                      ? "bg-white/5 border-white/10 hover:border-white/20 text-white/80"
+                      : "bg-slate-50 border-slate-200 hover:border-slate-300 text-slate-700"
+                  }`}
+                >
+                  <div
+                    className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-all ${
+                      formData.consentCvSharing
+                        ? "bg-emerald-500 border-emerald-500 text-white"
+                        : isDark
+                        ? "border-white/30 bg-white/5"
+                        : "border-slate-300 bg-white"
+                    }`}
+                  >
+                    {formData.consentCvSharing && <Check className="w-3 h-3 stroke-[3]" />}
+                  </div>
+                  <div className="space-y-0.5 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[11.5px] font-black tracking-wide text-[#58B9FF]">
+                        {language === "ar" ? "مشاركة السيرة الذاتية" : "CV Sharing"}
+                      </span>
+                      <span className="text-[9.5px] font-bold opacity-60">
+                        {language === "ar" ? "(اختياري)" : "(Optional)"}
+                      </span>
+                    </div>
+                    <p className="text-[10.5px] leading-relaxed opacity-90">
+                      {language === "ar"
+                        ? "أوافق على مشاركة سيرتي الذاتية مع المؤسسات الباحثة عن الكفاءات لأغراض التوظيف والفرص المهنية."
+                        : "I agree to share my CV with organizations seeking talent for recruitment and professional opportunities."}
+                    </p>
+                  </div>
+                </label>
               </div>
 
-              <div className="p-2.5 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs">
-                ✨ {language === "ar" ? "سيتم إرسال بطاقة دخولك الرسمية PDF فوراً إلى بريدك الإلكتروني." : "Your official PDF VIP event pass will be generated and emailed immediately."}
+              {/* Instant Notification Banner */}
+              <div className="p-2.5 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs flex items-center gap-2">
+                <Sparkles className="w-4 h-4 shrink-0 text-[#FFBD0E]" />
+                <span>
+                  {language === "ar"
+                    ? "ستظهر شارة الدخول الرسمية VIP مباشرة على الشاشة ويتم إرسالها إلى بريدك الإلكتروني فور التأكيد."
+                    : "Your official VIP badge will appear immediately on screen and be sent to your email upon confirmation."}
+                </span>
               </div>
             </div>
           )}
@@ -700,7 +801,7 @@ export default function StudentRegistrationForm({
               </button>
             ) : <span />}
 
-            {formStep < 4 ? (
+            {formStep < 3 ? (
               <button
                 type="button"
                 onClick={handleNextStep}

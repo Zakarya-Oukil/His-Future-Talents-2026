@@ -1953,6 +1953,32 @@ export default function AdminDashboard() {
                   )}
                 </div>
 
+                {/* 6. Consentements & Options */}
+                <div className="bg-slate-50 border border-slate-200 p-4 rounded-2xl space-y-2">
+                  <h4 className="font-black text-xs uppercase tracking-wider text-[#003876] border-b border-slate-200 pb-1.5">
+                    6. Consentements & Options
+                  </h4>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <span className={`px-2.5 py-1 rounded-lg text-[10.5px] font-bold inline-flex items-center gap-1 ${
+                      selectedStudent.consentDataProtection
+                        ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
+                        : "bg-slate-100 text-slate-500 border border-slate-200"
+                    }`}>
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>Protection données (Loi 18-07) : {selectedStudent.consentDataProtection ? "Accordée" : "Non cochée"}</span>
+                    </span>
+
+                    <span className={`px-2.5 py-1 rounded-lg text-[10.5px] font-bold inline-flex items-center gap-1 ${
+                      selectedStudent.consentCvSharing
+                        ? "bg-blue-100 text-blue-800 border border-blue-300"
+                        : "bg-slate-100 text-slate-500 border border-slate-200"
+                    }`}>
+                      <Share2 className="w-3.5 h-3.5" />
+                      <span>Partage CV recruteurs : {selectedStudent.consentCvSharing ? "Autorisé" : "Non coché"}</span>
+                    </span>
+                  </div>
+                </div>
+
                 {/* Status Updater */}
                 <div className="pt-2 flex items-center justify-between border-t border-slate-100">
                   <div className="flex items-center gap-2">

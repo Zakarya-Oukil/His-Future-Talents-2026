@@ -53,6 +53,8 @@ model StudentApplication {
   interests            String[] @default([])
   howDidYouHear        String?  @default("")
   additionalComments   String?  @default("")
+  consentDataProtection Boolean? @default(false)
+  consentCvSharing     Boolean? @default(false)
   status               String   @default("Nouveau") // "Nouveau" | "En cours" | "Confirmé" | "Refusé"
   submittedAt          DateTime @default(now())
 

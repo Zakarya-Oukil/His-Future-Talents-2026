@@ -19,7 +19,20 @@ export async function GET(
     const filePath = path.join(process.cwd(), "public", "uploads", "cv", safeFilename);
 
     if (!fs.existsSync(filePath)) {
-      return new NextResponse("File not found", { status: 404 });
+      // Fallback: fetch from live production site and cache locally
+      try {
+        const remoteRes = await fetch(`https://hisfuturetalent.his.edu.dz/uploads/cv/${safeFilename}`);
+        if (remoteRes.ok) {
+          const ab = await remoteRes.arrayBuffer();
+          const buf = Buffer.from(ab);
+          fs.mkdirSync(path.dirname(filePath), { recursive: true });
+          fs.writeFileSync(filePath, buf);
+        } else {
+          return new NextResponse("File not found", { status: 404 });
+        }
+      } catch (e) {
+        return new NextResponse("File not found", { status: 404 });
+      }
     }
 
     const fileBuffer = fs.readFileSync(filePath);
