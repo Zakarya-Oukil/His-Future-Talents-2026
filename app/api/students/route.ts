@@ -75,7 +75,8 @@ export async function POST(req: Request) {
       autoApprove,
     } = body;
 
-    // Required fields: Full Name (firstName + lastName or firstName), Email, Phone, Age Category, Current Status, Field of Study/Work, Interested Fields, CV
+    // Required fields: Full Name, Email, Phone, Age Category, Current Status, Field of Study/Work, Interested Fields.
+    // CV upload is optional and not required for registration.
     if (!firstName || !email || !phone || !ageCategory || !currentStatus || !fieldOfStudyOrWork) {
       return NextResponse.json(
         { success: false, error: "Please fill in all required fields (*)." },

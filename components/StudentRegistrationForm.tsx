@@ -144,14 +144,6 @@ export default function StudentRegistrationForm({
         );
         return false;
       }
-      if (!formData.cvUrl) {
-        setFormError(
-          language === "ar"
-            ? "رفع ملف السيرة الذاتية بصيغة PDF إلزامي جداً."
-            : "Uploading your PDF CV is mandatory."
-        );
-        return false;
-      }
     } else if (formStep === 3) {
       if (formData.seekingObjectives.length === 0) {
         setFormError(
@@ -582,7 +574,7 @@ export default function StudentRegistrationForm({
 
               {/* Integrated CV PDF Upload Box */}
               <div>
-                <label className={labelClass}>{language === "ar" ? "تحميل السيرة الذاتية (CV PDF إلزامي) *" : "Upload Resume (PDF format required) *"}</label>
+                <label className={labelClass}>{language === "ar" ? "تحميل السيرة الذاتية (PDF اختياري)" : "Upload Resume (PDF format optional)"}</label>
                 <div
                   onDragOver={(e) => e.preventDefault()}
                   onDrop={(e) => {
