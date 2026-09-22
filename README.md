@@ -1,9 +1,6 @@
 # HIS Future Talents 2026 (HFT 2026)
 
 Official repository for the HIS Future Talents 2026 website and administration portal.
-
-This README is written for new collaborators who need to work on frontend, backend, and data/database layers with minimal onboarding friction.
-
 ---
 
 ## 1. Project Overview
