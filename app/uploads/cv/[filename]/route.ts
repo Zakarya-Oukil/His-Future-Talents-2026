@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isAdmin, unauthorized } from "@/lib/adminAuth";
 import fs from "fs";
 import path from "path";
 
@@ -8,6 +9,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { filename: string } }
 ) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const filename = params?.filename;
     if (!filename) {

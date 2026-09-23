@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
+import { isAdmin, unauthorized } from "@/lib/adminAuth";
 import { sendEmail, verifySmtpConnection } from "@/lib/mailer";
 
 export async function GET(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   const { searchParams } = new URL(req.url);
   const targetEmail = searchParams.get("to") || process.env.SMTP_USER || "hisfuturetalents@his.edu.dz";
 

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isAdmin, unauthorized } from "@/lib/adminAuth";
 import {
   getStudentApplications,
   saveStudentApplication,
@@ -10,7 +11,22 @@ import { sendStudentApprovalEmail } from "@/lib/mailer";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function GET() {
+// Fields safe to show on the public /verify page
+const PUBLIC_FIELDS = ["id", "badgeId", "firstName", "lastName", "fieldOfStudyOrWork", "studyLevel", "university", "status"] as const;
+
+export async function GET(req: Request) {
+  if (!isAdmin(req)) {
+    const { searchParams } = new URL(req.url);
+    const id = (searchParams.get("id") || "").toLowerCase();
+    const code = (searchParams.get("code") || "").toUpperCase();
+    if (!id && !code) return unauthorized();
+    const students = await getStudentApplications();
+    const match = students.find(
+      (s) => (id && s.id?.toLowerCase() === id) || (code && s.badgeId?.toUpperCase() === code)
+    );
+    const data = match ? [Object.fromEntries(PUBLIC_FIELDS.map((k) => [k, (match as any)[k]]))] : [];
+    return NextResponse.json({ success: true, data });
+  }
   try {
     const localStudents = await getStudentApplications();
 
@@ -128,6 +144,9 @@ export async function PATCH(req: Request) {
   try {
     const body = await req.json();
     const { id, status, action, resendEmail } = body;
+
+    // Only "resend my badge" is public (used by StudentBadge after registration); everything else is admin-only
+    if (!(action === "resend_email" || resendEmail) && !isAdmin(req)) return unauthorized();
 
     if (action === "delete") {
       const deleted = await deleteStudentApplication(id);
