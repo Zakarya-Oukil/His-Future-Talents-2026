@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isAdmin, unauthorized } from "@/lib/adminAuth";
 import { getSponsors, addSponsor, updateSponsor, deleteSponsor, getLeads } from "@/lib/dataStore";
 import { Partner } from "@/data/partners";
 
@@ -199,6 +200,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const body: Partner = await req.json();
     if (!body.name || !body.logo || !body.edition) {
@@ -223,6 +225,7 @@ export async function POST(req: Request) {
 }
 
 export async function PUT(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const body = await req.json();
     const { slug, edition, ...updatedFields } = body;
@@ -238,6 +241,7 @@ export async function PUT(req: Request) {
 }
 
 export async function DELETE(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const { searchParams } = new URL(req.url);
     const slug = searchParams.get("slug");

@@ -30,7 +30,7 @@ function VerifyContent() {
   useEffect(() => {
     async function fetchStudent() {
       try {
-        const res = await fetch("/api/students");
+        const res = await fetch(`/api/students?${new URLSearchParams({ id, code }).toString()}`);
         if (res.ok) {
           const data = await res.json();
           if (data.success && Array.isArray(data.data)) {

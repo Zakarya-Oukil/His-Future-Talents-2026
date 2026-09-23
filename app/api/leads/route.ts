@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
+import { isAdmin, unauthorized } from "@/lib/adminAuth";
 import { getLeads, saveLead, updateLeadStatus, deleteLead } from "@/lib/dataStore";
 import { appendToGoogleSheet, fetchLeadsFromGoogleSheet } from "@/lib/googleSheets";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function GET() {
+export async function GET(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const localLeads = await getLeads();
 
@@ -168,6 +170,7 @@ export async function POST(req: Request) {
 }
 
 export async function PATCH(req: Request) {
+  if (!isAdmin(req)) return unauthorized();
   try {
     const body = await req.json();
     const { id, status, action } = body;

@@ -476,35 +476,42 @@ export default function AdminDashboard() {
     description: { en: "", ar: "" },
   });
 
-  // Check auth session
+  // Check auth session (httpOnly cookie, verified server-side)
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const auth = localStorage.getItem("hft_admin_auth");
-      if (auth === "true") {
-        setIsAuthenticated(true);
-        fetchData();
-      }
-    }
+    fetch("/api/admin/login", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setIsAuthenticated(true);
+          fetchData();
+        }
+      })
+      .catch(() => {});
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (passcode === "hft2026" || passcode === "admin") {
-      setIsAuthenticated(true);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("hft_admin_auth", "true");
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: passcode }),
+      });
+      if (res.ok) {
+        setPasscode("");
+        setIsAuthenticated(true);
+        fetchData();
+        return;
       }
-      fetchData();
-    } else {
-      setLoginError(language === "ar" ? "رمز الدخول غير صحيح." : "Incorrect passcode.");
+    } catch (err) {
+      console.error("Login error", err);
     }
+    setLoginError(language === "ar" ? "رمز الدخول غير صحيح." : "Incorrect passcode.");
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("hft_admin_auth");
-    }
+    fetch("/api/admin/login", { method: "DELETE" }).catch(() => {});
   };
 
   const fetchData = async () => {

@@ -705,20 +705,8 @@ async function autoSeedDatabaseIfEmpty() {
     for (const lead of AUTHENTIC_RECOVERED_LEADS) {
       await prisma.exhibitorLead.upsert({
         where: { id: lead.id },
-        update: {
-          companyName: lead.companyName,
-          representativeName: lead.representativeName,
-          role: lead.role || "",
-          email: lead.email,
-          phone: lead.phone,
-          representativesCount: lead.representativesCount || 2,
-          opportunities: lead.opportunities || [],
-          targetProfiles: lead.targetProfiles || "",
-          equipmentNeeded: lead.equipmentNeeded || "",
-          remarks: lead.remarks || "",
-          packageDesired: lead.packageDesired || "Exposant",
-          status: lead.status || "Nouveau",
-        },
+        // Create-only: never overwrite admin edits (status etc.) on restart
+        update: {},
         create: {
           id: lead.id,
           companyName: lead.companyName,
