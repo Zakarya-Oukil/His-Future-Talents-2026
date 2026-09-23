@@ -24,7 +24,7 @@ export function getTransporter(): nodemailer.Transporter {
       secure: isSecure,
       auth: {
         user: process.env.SMTP_USER || "hisfuturetalents@his.edu.dz",
-        pass: process.env.SMTP_PASS || "3aJMe/}M;N",
+        pass: process.env.SMTP_PASS,
       },
       tls: {
         rejectUnauthorized: true,
