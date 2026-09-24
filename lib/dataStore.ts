@@ -907,26 +907,53 @@ export async function getStudentApplications(): Promise<StudentApplication[]> {
         orderBy: { submittedAt: "desc" },
       });
       if (dbStudents && dbStudents.length > 0) {
-        return dbStudents.map((s) => ({
-          ...s,
-          wilaya: s.wilaya || "",
-          university: s.university || "",
-          studyLevel: s.studyLevel || "",
-          cvUrl: s.cvUrl || "",
-          cvFileName: s.cvFileName || "",
-          howDidYouHear: s.howDidYouHear || "",
-          additionalComments: s.additionalComments || "",
-          consentDataProtection: s.consentDataProtection ?? false,
-          consentCvSharing: s.consentCvSharing ?? false,
-          status: s.status as any,
-          submittedAt: s.submittedAt.toISOString(),
-        }));
+        return dbStudents.map(mapDbStudent);
       }
     } catch (err) {
       console.warn("[PRISMA READ WARNING] Falling back to file storage for students:", err);
     }
   }
   return safeReadFile<StudentApplication[]>(STUDENTS_FILE, []);
+}
+
+function mapDbStudent(s: any): StudentApplication {
+  return {
+    ...s,
+    wilaya: s.wilaya || "",
+    university: s.university || "",
+    studyLevel: s.studyLevel || "",
+    cvUrl: s.cvUrl || "",
+    cvFileName: s.cvFileName || "",
+    howDidYouHear: s.howDidYouHear || "",
+    additionalComments: s.additionalComments || "",
+    consentDataProtection: s.consentDataProtection ?? false,
+    consentCvSharing: s.consentCvSharing ?? false,
+    status: s.status as any,
+    submittedAt: s.submittedAt.toISOString(),
+  };
+}
+
+// Single-student lookup by id or badge code, without loading the whole table.
+// Exact matches only: Prisma's `mode: "insensitive"` uses ILIKE, where % and _ act as wildcards (enumeration).
+// Ids are generated lowercase and badge codes uppercase, so normalized + raw input covers old case-insensitive behavior.
+export async function findStudentApplication(id: string, code: string): Promise<StudentApplication | undefined> {
+  const idL = id.toLowerCase();
+  const codeU = code.toUpperCase();
+  if (!idL && !codeU) return undefined;
+  if (process.env.DATABASE_URL) {
+    try {
+      const or: any[] = [];
+      if (idL) or.push({ id: { in: [id, idL] } });
+      if (codeU) or.push({ badgeId: { in: [code, codeU] } });
+      const s = await prisma.studentApplication.findFirst({ where: { OR: or } });
+      return s ? mapDbStudent(s) : undefined;
+    } catch (err) {
+      console.warn("[PRISMA READ WARNING] Falling back to file storage for student lookup:", err);
+    }
+  }
+  return safeReadFile<StudentApplication[]>(STUDENTS_FILE, []).find(
+    (s) => (idL && s.id?.toLowerCase() === idL) || (codeU && s.badgeId?.toUpperCase() === codeU)
+  );
 }
 
 export async function saveStudentApplication(

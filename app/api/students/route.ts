@@ -5,11 +5,17 @@ import {
   saveStudentApplication,
   updateStudentApplicationStatus,
   deleteStudentApplication,
+  findStudentApplication,
 } from "@/lib/dataStore";
 import { sendStudentApprovalEmail } from "@/lib/mailer";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+// Public "resend my badge": one email per student per cooldown window (admins are exempt).
+// ponytail: in-memory, resets on deploy and assumes a single replica; move to DB if the app scales out.
+const RESEND_COOLDOWN_MS = 2 * 60 * 1000;
+const lastResendAt = new Map<string, number>();
 
 // Fields safe to show on the public /verify page
 const PUBLIC_FIELDS = ["id", "badgeId", "firstName", "lastName", "fieldOfStudyOrWork", "studyLevel", "university", "status"] as const;
@@ -17,13 +23,10 @@ const PUBLIC_FIELDS = ["id", "badgeId", "firstName", "lastName", "fieldOfStudyOr
 export async function GET(req: Request) {
   if (!isAdmin(req)) {
     const { searchParams } = new URL(req.url);
-    const id = (searchParams.get("id") || "").toLowerCase();
-    const code = (searchParams.get("code") || "").toUpperCase();
+    const id = searchParams.get("id") || "";
+    const code = searchParams.get("code") || "";
     if (!id && !code) return unauthorized();
-    const students = await getStudentApplications();
-    const match = students.find(
-      (s) => (id && s.id?.toLowerCase() === id) || (code && s.badgeId?.toUpperCase() === code)
-    );
+    const match = await findStudentApplication(id, code);
     const data = match ? [Object.fromEntries(PUBLIC_FIELDS.map((k) => [k, (match as any)[k]]))] : [];
     return NextResponse.json({ success: true, data });
   }
@@ -155,10 +158,20 @@ export async function PATCH(req: Request) {
 
     // Action to resend approval email manually
     if (action === "resend_email" || resendEmail) {
-      const students = await getStudentApplications();
-      const student = students.find((s) => s.id === id);
+      const student = id ? await findStudentApplication(String(id), "") : undefined;
       if (!student) {
         return NextResponse.json({ success: false, error: "Student not found" }, { status: 404 });
+      }
+
+      if (!isAdmin(req)) {
+        const last = lastResendAt.get(student.id) || 0;
+        if (Date.now() - last < RESEND_COOLDOWN_MS) {
+          return NextResponse.json(
+            { success: false, error: "Badge was just sent. Please check your inbox (and spam) and try again in 2 minutes." },
+            { status: 429 }
+          );
+        }
+        lastResendAt.set(student.id, Date.now());
       }
 
       const emailResult = await sendStudentApprovalEmail(student);
