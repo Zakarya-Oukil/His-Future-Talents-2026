@@ -6,12 +6,80 @@ export type Speaker = {
   };
   company?: string;
   category: "conference" | "workshop";
-  edition: 2024 | 2025;
+  edition: 2024 | 2025 | 2026;
   image?: string;
   imageStatus: "confirmed" | "placeholder";
 };
 
 export const speakersData: Speaker[] = [
+  // Conference Speakers — Edition 2026
+  {
+    name: "Youcef Baslimane",
+    role: {
+      en: "Keynote Speaker - General Director at MINIROS",
+      ar: "المتحدث الرئيسي - المدير العام لشركة مينيروس",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/youcef-baslimane.jpg",
+    imageStatus: "confirmed"
+  },
+  {
+    name: "Mohamed Zebouchi",
+    role: {
+      en: "HR Director at Optilla - Kaoua Food",
+      ar: "مدير الموارد البشرية بشركة أوبتيلا - كاوا فود",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/mohamed-zebouchi.jpg",
+    imageStatus: "confirmed"
+  },
+  {
+    name: "Toufik Boukhari",
+    role: {
+      en: "HR Manager at SATIM",
+      ar: "مدير الموارد البشرية بشركة ساتيم",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/toufik-boukhari.jpg",
+    imageStatus: "confirmed"
+  },
+  {
+    name: "Fares Tinakiche",
+    role: {
+      en: "Product Manager at Maystro Delivery",
+      ar: "مدير المنتج بشركة مايسترو ديليفري",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/fares-tinakiche.jpg",
+    imageStatus: "confirmed"
+  },
+  {
+    name: "Yanis Doudou",
+    role: {
+      en: "Head of Recruitment at Prophex Solutions Group",
+      ar: "رئيس مصلحة التوظيف بمجموعة بروفكس سوليوشنز",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/yanis-doudou.jpg",
+    imageStatus: "confirmed"
+  },
+  {
+    name: "Said Khebbeb",
+    role: {
+      en: "HR Officer at WeeWee Delivery",
+      ar: "مكلف بالموارد البشرية بشركة ويوي ديليفري",
+    },
+    category: "conference",
+    edition: 2026,
+    image: "/speakers/2026/said-khebbeb.jpg",
+    imageStatus: "confirmed"
+  },
+
   // Conference Speakers — Edition 2025
   {
     name: "Abdelmalek Cheta",

@@ -5,7 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { speakersData, Speaker } from "@/data/speakers";
 import SpeakerCard from "./SpeakerCard";
 
-type FilterType = "all" | "conf-2025" | "conf-2024" | "workshop-2025";
+type FilterType = "all" | "conf-2026" | "conf-2025" | "conf-2024" | "workshop-2025";
 
 const GroupHeader = ({ title, count }: { title: string; count: number }) => (
   <div className="flex items-center justify-between border-b border-slate-200 pb-2.5 mb-4 text-start">
@@ -25,12 +25,14 @@ export default function SpeakerFilterGrid() {
   const { language, dir } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
 
+  const conf2026 = speakersData.filter((s) => s.edition === 2026 && s.category === "conference");
   const conf2025 = speakersData.filter((s) => s.edition === 2025 && s.category === "conference");
   const conf2024 = speakersData.filter((s) => s.edition === 2024 && s.category === "conference");
   const workshop2025 = speakersData.filter((s) => s.edition === 2025 && s.category === "workshop");
 
   const filterTabs = [
     { id: "all", en: "All", ar: "الكل" },
+    { id: "conf-2026", en: "2026 Conferences", ar: "محاضرات 2026" },
     { id: "conf-2025", en: "2025 Conferences", ar: "محاضرات 2025" },
     { id: "conf-2024", en: "2024 Conferences", ar: "محاضرات 2024" },
     { id: "workshop-2025", en: "Workshops & Masterclasses", ar: "الورشات التدريبية" }
@@ -81,6 +83,12 @@ export default function SpeakerFilterGrid() {
 
       {/* Grouped Grids */}
       <div className="space-y-8 max-w-7xl mx-auto">
+        {(activeFilter === "all" || activeFilter === "conf-2026") &&
+          renderGroup(
+            { en: "Conferences — 2026 Edition", ar: "محاضرات — دورة 2026" },
+            conf2026
+          )}
+
         {(activeFilter === "all" || activeFilter === "conf-2025") &&
           renderGroup(
             { en: "Conferences — 2025 Edition", ar: "محاضرات — دورة 2025" },
