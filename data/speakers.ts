@@ -100,7 +100,8 @@ export const speakersData: Speaker[] = [
     },
     category: "workshop",
     edition: 2026,
-    imageStatus: "placeholder"
+    image: "/speakers/2026/racha-yasmine-bendris.jpg",
+    imageStatus: "confirmed"
   },
   {
     name: "Said Khebbeb",
