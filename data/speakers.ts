@@ -5,21 +5,25 @@ export type Speaker = {
     ar: string;
   };
   company?: string;
-  category: "conference" | "workshop";
+  topic?: {
+    en: string;
+    ar: string;
+  };
+  category: "conference" | "workshop" | "keynote" | "panel";
   edition: 2024 | 2025 | 2026;
   image?: string;
   imageStatus: "confirmed" | "placeholder";
 };
 
 export const speakersData: Speaker[] = [
-  // Conference Speakers — Edition 2026
+  // Speakers — Edition 2026 (keynote / panel / workshops)
   {
     name: "Youcef Baslimane",
     role: {
-      en: "Keynote Speaker - General Director at MINIROS",
-      ar: "المتحدث الرئيسي - المدير العام لشركة مينيروس",
+      en: "General Director at MINIROS",
+      ar: "المدير العام لشركة مينيروس",
     },
-    category: "conference",
+    category: "keynote",
     edition: 2026,
     image: "/speakers/2026/youcef-baslimane.jpg",
     imageStatus: "confirmed"
@@ -30,7 +34,11 @@ export const speakersData: Speaker[] = [
       en: "HR Director at Optilla - Kaoua Food",
       ar: "مدير الموارد البشرية بشركة أوبتيلا - كاوا فود",
     },
-    category: "conference",
+    topic: {
+      en: "Beyond the Degree: The Skills That Make the Difference",
+      ar: "ما بعد الشهادة: المهارات التي تصنع الفرق",
+    },
+    category: "panel",
     edition: 2026,
     image: "/speakers/2026/mohamed-zebouchi.jpg",
     imageStatus: "confirmed"
@@ -41,7 +49,11 @@ export const speakersData: Speaker[] = [
       en: "HR Manager at SATIM",
       ar: "مدير الموارد البشرية بشركة ساتيم",
     },
-    category: "conference",
+    topic: {
+      en: "Beyond the Degree: The Skills That Make the Difference",
+      ar: "ما بعد الشهادة: المهارات التي تصنع الفرق",
+    },
+    category: "panel",
     edition: 2026,
     image: "/speakers/2026/toufik-boukhari.jpg",
     imageStatus: "confirmed"
@@ -52,7 +64,11 @@ export const speakersData: Speaker[] = [
       en: "Product Manager at Maystro Delivery",
       ar: "مدير المنتج بشركة مايسترو ديليفري",
     },
-    category: "conference",
+    topic: {
+      en: "Technical Job Hunt: Careers in the Digital Age",
+      ar: "البحث عن وظيفة تقنية: المسارات المهنية في العصر الرقمي",
+    },
+    category: "workshop",
     edition: 2026,
     image: "/speakers/2026/fares-tinakiche.jpg",
     imageStatus: "confirmed"
@@ -60,13 +76,31 @@ export const speakersData: Speaker[] = [
   {
     name: "Yanis Doudou",
     role: {
-      en: "Head of Recruitment at Prophex Solutions Group",
-      ar: "رئيس مصلحة التوظيف بمجموعة بروفكس سوليوشنز",
+      en: "Recruitment Service Manager at Prophex Solutions Group",
+      ar: "مدير مصلحة التوظيف بمجموعة بروفكس سوليوشنز",
     },
-    category: "conference",
+    topic: {
+      en: "The Actual Skills You Need to Be Job Ready",
+      ar: "المهارات الفعلية التي تحتاجها لتكون جاهزاً لسوق العمل",
+    },
+    category: "workshop",
     edition: 2026,
     image: "/speakers/2026/yanis-doudou.jpg",
     imageStatus: "confirmed"
+  },
+  {
+    name: "Racha Yasmine Bendris",
+    role: {
+      en: "HR & Talent Acquisition Specialist at HydraPharm Group",
+      ar: "أخصائية الموارد البشرية واستقطاب المواهب بمجموعة هيدرافارم",
+    },
+    topic: {
+      en: "Interview Readiness: How to Be Ready for Your Opportunity",
+      ar: "الاستعداد للمقابلة: كيف تكون جاهزاً لفرصتك",
+    },
+    category: "workshop",
+    edition: 2026,
+    imageStatus: "placeholder"
   },
   {
     name: "Said Khebbeb",
@@ -74,7 +108,11 @@ export const speakersData: Speaker[] = [
       en: "HR Officer at WeeWee Delivery",
       ar: "مكلف بالموارد البشرية بشركة ويوي ديليفري",
     },
-    category: "conference",
+    topic: {
+      en: "Career Preparation from Zero to Opportunity",
+      ar: "التحضير المهني من الصفر إلى الفرصة",
+    },
+    category: "workshop",
     edition: 2026,
     image: "/speakers/2026/said-khebbeb.jpg",
     imageStatus: "confirmed"

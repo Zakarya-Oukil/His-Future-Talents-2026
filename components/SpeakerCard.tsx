@@ -11,14 +11,22 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
   const { language } = useLanguage();
   const isConfirmed = speaker.imageStatus === "confirmed" && speaker.image;
 
-  const categoryLabel =
-    speaker.category === "conference"
-      ? language === "ar"
-        ? "محاضرة"
-        : "Conference"
-      : language === "ar"
-      ? "ورشة عمل"
-      : "Workshop";
+  const labels: Record<Speaker["category"], { en: string; ar: string }> = {
+    conference: { en: "Conference", ar: "محاضرة" },
+    keynote: { en: "Keynote", ar: "الكلمة الافتتاحية" },
+    panel: { en: "Panel", ar: "طاولة مستديرة" },
+    workshop: { en: "Workshop", ar: "ورشة عمل" },
+  };
+  const categoryLabel = language === "ar"
+    ? labels[speaker.category].ar
+    : labels[speaker.category].en;
+
+  const badgeClass = {
+    conference: "bg-[#003876]/10 text-[#003876]",
+    keynote: "bg-[#F05A22] text-white",
+    panel: "bg-[#003876]/10 text-[#003876]",
+    workshop: "bg-[#F05A22]/10 text-[#F05A22]",
+  }[speaker.category];
 
   return (
     <div className="bg-white border border-slate-200/80 rounded-2xl p-3.5 flex items-center gap-3.5 shadow-xs hover:shadow-md hover:border-[#F05A22]/50 hover:-translate-y-0.5 transition-all duration-300 group text-start h-full">
@@ -51,11 +59,7 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
       {/* Content */}
       <div className="flex-1 min-w-0 space-y-1">
         <div className="flex items-center gap-1.5 flex-wrap">
-          <span className={`text-[8px] font-black uppercase px-2 py-0.5 rounded-md ${
-            speaker.category === "conference"
-              ? "bg-[#003876]/10 text-[#003876]"
-              : "bg-[#F05A22]/10 text-[#F05A22]"
-          }`}>
+          <span className={`text-[8px] font-black uppercase px-2 py-0.5 rounded-md ${badgeClass}`}>
             {categoryLabel}
           </span>
           <span className="text-[8px] font-bold text-slate-400">
@@ -74,6 +78,12 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
             ? (language === "ar" ? speaker.role.ar : speaker.role.en)
             : speaker.role}
         </p>
+
+        {speaker.topic && (
+          <p className="text-[10px] text-slate-500 italic line-clamp-2 leading-tight">
+            {language === "ar" ? speaker.topic.ar : speaker.topic.en}
+          </p>
+        )}
       </div>
     </div>
   );

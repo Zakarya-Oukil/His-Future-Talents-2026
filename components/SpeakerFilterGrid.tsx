@@ -25,7 +25,9 @@ export default function SpeakerFilterGrid() {
   const { language, dir } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
 
-  const conf2026 = speakersData.filter((s) => s.edition === 2026 && s.category === "conference");
+  const keynote2026 = speakersData.filter((s) => s.edition === 2026 && s.category === "keynote");
+  const panel2026 = speakersData.filter((s) => s.edition === 2026 && s.category === "panel");
+  const workshop2026 = speakersData.filter((s) => s.edition === 2026 && s.category === "workshop");
   const conf2025 = speakersData.filter((s) => s.edition === 2025 && s.category === "conference");
   const conf2024 = speakersData.filter((s) => s.edition === 2024 && s.category === "conference");
   const workshop2025 = speakersData.filter((s) => s.edition === 2025 && s.category === "workshop");
@@ -83,11 +85,22 @@ export default function SpeakerFilterGrid() {
 
       {/* Grouped Grids */}
       <div className="space-y-8 max-w-7xl mx-auto">
-        {(activeFilter === "all" || activeFilter === "conf-2026") &&
-          renderGroup(
-            { en: "Conferences — 2026 Edition", ar: "محاضرات — دورة 2026" },
-            conf2026
-          )}
+        {(activeFilter === "all" || activeFilter === "conf-2026") && (
+          <div className="space-y-8">
+            {renderGroup(
+              { en: "Keynote — 2026 Edition", ar: "الكلمة الافتتاحية — دورة 2026" },
+              keynote2026
+            )}
+            {renderGroup(
+              { en: "Panel — 2026 Edition", ar: "الطاولة المستديرة — دورة 2026" },
+              panel2026
+            )}
+            {renderGroup(
+              { en: "Workshops — 2026 Edition", ar: "الورشات التدريبية — دورة 2026" },
+              workshop2026
+            )}
+          </div>
+        )}
 
         {(activeFilter === "all" || activeFilter === "conf-2025") &&
           renderGroup(
